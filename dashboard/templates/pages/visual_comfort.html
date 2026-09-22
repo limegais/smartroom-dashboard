@@ -1,0 +1,144 @@
+<div id="visual-comfort" class="page">
+    <div class="header">
+        <h1>Visual Comfort Feedback</h1>
+        <p>Occupant Visual Comfort Feedback — Rate and monitor visual comfort levels — Illuminance (Lux) from BH1750 sensors</p>
+    </div>
+
+    <!-- Current Conditions -->
+    <div class="comfort-header-bar">
+        <div class="comfort-indicator">
+            <div class="ci-label">Sensor 1</div>
+            <div class="ci-value"><span id="vc-lux1">--</span><span class="ci-unit"> lx</span></div>
+        </div>
+        <div class="comfort-indicator">
+            <div class="ci-label">Sensor 2</div>
+            <div class="ci-value"><span id="vc-lux2">--</span><span class="ci-unit"> lx</span></div>
+        </div>
+        <div class="comfort-indicator">
+            <div class="ci-label">Sensor 3</div>
+            <div class="ci-value"><span id="vc-lux3">--</span><span class="ci-unit"> lx</span></div>
+        </div>
+        <div class="comfort-indicator">
+            <div class="ci-label">Average Lux</div>
+            <div class="ci-value"><span id="vc-lux-avg">--</span><span class="ci-unit"> lx</span></div>
+        </div>
+        <div class="comfort-indicator">
+            <div class="ci-label">Occupancy</div>
+            <div class="ci-value"><span id="vc-occ">0</span></div>
+        </div>
+    </div>
+
+    <div class="feedback-grid">
+        <!-- Rating Form -->
+        <div class="chart-container">
+            <div class="chart-header">
+                <div class="chart-title"><i class="fas fa-lightbulb" style="color: #0ea5e9; margin-right: 8px;"></i>Visual Comfort Rating Form</div>
+            </div>
+
+            <!-- Standard reference note -->
+            <div style="background: rgba(14,165,233,0.08); border-left: 3px solid #0ea5e9; padding: 10px 14px; border-radius: 6px; margin-bottom: 18px; font-size: 13px; color: var(--text-secondary);">
+                <i class="fas fa-info-circle" style="margin-right: 6px; color: #0ea5e9;"></i>
+                Standar Acuan: <strong>Visual Comfort Assessment Protocol</strong>
+            </div>
+
+            <!-- Q1: Lighting Sensation Vote (LSV) -->
+            <div class="ashrae-question-block">
+                <div class="ashrae-question-header">
+                    <span class="ashrae-qnum" style="background: linear-gradient(135deg, #0ea5e9, #38bdf8);">Q1</span>
+                    <div>
+                        <div class="ashrae-var-name">Lighting Sensation Vote (LSV)</div>
+                        <div class="ashrae-question-text">How do you perceive the current lighting level?</div>
+                    </div>
+                </div>
+                <div class="ashrae-scale-row" id="lsv-scale">
+                    <button class="ashrae-btn dark-side" data-value="-3" onclick="selectASHRAEVisual('lsv',-3)">−3<span>Very dark</span></button>
+                    <button class="ashrae-btn dark-side" data-value="-2" onclick="selectASHRAEVisual('lsv',-2)">−2<span>Dark</span></button>
+                    <button class="ashrae-btn dark-side" data-value="-1" onclick="selectASHRAEVisual('lsv',-1)">−1<span>Slightly dark</span></button>
+                    <button class="ashrae-btn neutral" data-value="0" onclick="selectASHRAEVisual('lsv',0)">0<span>Neutral</span></button>
+                    <button class="ashrae-btn bright-side" data-value="1" onclick="selectASHRAEVisual('lsv',1)">+1<span>Slightly bright</span></button>
+                    <button class="ashrae-btn bright-side" data-value="2" onclick="selectASHRAEVisual('lsv',2)">+2<span>Bright</span></button>
+                    <button class="ashrae-btn bright-side" data-value="3" onclick="selectASHRAEVisual('lsv',3)">+3<span>Very bright</span></button>
+                </div>
+                <div class="ashrae-selected-label" id="lsv-selected">— Belum dipilih —</div>
+            </div>
+
+            <!-- Q2: Lighting Preference Vote (LPV) -->
+            <div class="ashrae-question-block">
+                <div class="ashrae-question-header">
+                    <span class="ashrae-qnum" style="background: linear-gradient(135deg, #0ea5e9, #38bdf8);">Q2</span>
+                    <div>
+                        <div class="ashrae-var-name">Lighting Preference Vote (LPV)</div>
+                        <div class="ashrae-question-text">Right now, would you prefer the lighting to be…?</div>
+                    </div>
+                </div>
+                <div class="ashrae-scale-row" id="lpv-scale">
+                    <button class="ashrae-btn dark-side" data-value="-1" onclick="selectASHRAEVisual('lpv',-1)">−1<span>Darker</span></button>
+                    <button class="ashrae-btn neutral" data-value="0" onclick="selectASHRAEVisual('lpv',0)">0<span>No change</span></button>
+                    <button class="ashrae-btn bright-side" data-value="1" onclick="selectASHRAEVisual('lpv',1)">+1<span>Brighter</span></button>
+                </div>
+                <div class="ashrae-selected-label" id="lpv-selected">— Belum dipilih —</div>
+            </div>
+
+            <!-- Q3: Visual Satisfaction Vote (VSaV) -->
+            <div class="ashrae-question-block">
+                <div class="ashrae-question-header">
+                    <span class="ashrae-qnum" style="background: linear-gradient(135deg, #0ea5e9, #38bdf8);">Q3</span>
+                    <div>
+                        <div class="ashrae-var-name">Visual Satisfaction Vote (VSaV)</div>
+                        <div class="ashrae-question-text">How satisfied are you with the current visual conditions?</div>
+                    </div>
+                </div>
+                <div class="ashrae-scale-row" id="vsav-scale">
+                    <button class="ashrae-btn dissatisfied" data-value="-3" onclick="selectASHRAEVisual('vsav',-3)">−3<span>Very dissatisfied</span></button>
+                    <button class="ashrae-btn dissatisfied" data-value="-2" onclick="selectASHRAEVisual('vsav',-2)">−2<span>Dissatisfied</span></button>
+                    <button class="ashrae-btn dissatisfied" data-value="-1" onclick="selectASHRAEVisual('vsav',-1)">−1<span>Slightly dissatisfied</span></button>
+                    <button class="ashrae-btn neutral" data-value="0" onclick="selectASHRAEVisual('vsav',0)">0<span>Neutral</span></button>
+                    <button class="ashrae-btn satisfied" data-value="1" onclick="selectASHRAEVisual('vsav',1)">+1<span>Slightly satisfied</span></button>
+                    <button class="ashrae-btn satisfied" data-value="2" onclick="selectASHRAEVisual('vsav',2)">+2<span>Satisfied</span></button>
+                    <button class="ashrae-btn satisfied" data-value="3" onclick="selectASHRAEVisual('vsav',3)">+3<span>Very satisfied</span></button>
+                </div>
+                <div class="ashrae-selected-label" id="vsav-selected">— Belum dipilih —</div>
+            </div>
+
+            <!-- Comment -->
+            <div style="margin-top: 14px;">
+                <label style="font-size:13px; font-weight:600; color:var(--text-secondary); display:block; margin-bottom:6px;">Additional Comments (optional)</label>
+                <textarea id="visual-feedback-comment" class="feedback-input" rows="3" placeholder="Describe your visual comfort experience..."></textarea>
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap;">
+                <button class="btn btn-primary" onclick="submitVisualFeedback()" style="background: #0ea5e9;">
+                    <i class="fas fa-paper-plane"></i> Submit Visual Feedback
+                </button>
+                <button class="btn" style="background: var(--surface-2);" onclick="resetVisualForm()">
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+            </div>
+        </div>
+
+        <!-- History -->
+        <div class="chart-container">
+            <div class="chart-header">
+                <div class="chart-title">Recent Visual Feedback</div>
+                <div class="chart-options">
+                    <button class="chart-option-btn" onclick="exportVisualFeedback()">
+                        <i class="fas fa-download"></i> Export CSV
+                    </button>
+                </div>
+            </div>
+            <div id="visual-feedback-history"></div>
+        </div>
+    </div>
+
+    <!-- Trend Chart -->
+    <div class="chart-container" style="margin-top: 20px;">
+        <div class="chart-header">
+            <div class="chart-title">Visual Comfort Trend</div>
+            <div class="chart-options">
+                <button class="chart-option-btn active" onclick="changeVisualChartRange(24)">24h</button>
+                <button class="chart-option-btn" onclick="changeVisualChartRange(168)">7d</button>
+            </div>
+        </div>
+        <canvas id="visualComfortChart" height="48"></canvas>
+    </div>
+</div>

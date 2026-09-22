@@ -1,0 +1,140 @@
+<div id="thermal-comfort" class="page">
+    <div class="header">
+        <h1>Thermal Comfort Feedback</h1>
+        <p>Occupant Thermal Comfort Feedback — Standar Acuan: <strong>ASHRAE Standard 55-2020</strong></p>
+    </div>
+
+    <!-- Current Conditions -->
+    <div class="comfort-header-bar">
+        <div class="comfort-indicator">
+            <div class="ci-label">Temperature</div>
+            <div class="ci-value"><span id="tc-temp">--</span><span class="ci-unit">°C</span></div>
+        </div>
+        <div class="comfort-indicator">
+            <div class="ci-label">Humidity</div>
+            <div class="ci-value"><span id="tc-hum">--</span><span class="ci-unit">%</span></div>
+        </div>
+        <div class="comfort-indicator">
+            <div class="ci-label">Heat Index</div>
+            <div class="ci-value"><span id="tc-hi">--</span><span class="ci-unit">°C</span></div>
+        </div>
+        <div class="comfort-indicator">
+            <div class="ci-label">Occupancy</div>
+            <div class="ci-value"><span id="tc-occ">0</span></div>
+        </div>
+    </div>
+
+    <div class="feedback-grid">
+        <!-- Rating Form -->
+        <div class="chart-container">
+            <div class="chart-header">
+                <div class="chart-title"><i class="fas fa-thermometer-half" style="color: var(--primary); margin-right: 8px;"></i>Thermal Comfort Rating Form</div>
+            </div>
+
+            <!-- Standard reference note -->
+            <div style="background: rgba(99,102,241,0.08); border-left: 3px solid var(--primary); padding: 10px 14px; border-radius: 6px; margin-bottom: 18px; font-size: 13px; color: var(--text-secondary);">
+                <i class="fas fa-info-circle" style="margin-right: 6px; color: var(--primary);"></i>
+                Standar Acuan: <strong>ASHRAE Standard 55-2020</strong>
+            </div>
+
+            <!-- Q1: Thermal Sensation Vote (TSV) -->
+            <div class="ashrae-question-block">
+                <div class="ashrae-question-header">
+                    <span class="ashrae-qnum">Q1</span>
+                    <div>
+                        <div class="ashrae-var-name">Thermal Sensation Vote (TSV)</div>
+                        <div class="ashrae-question-text">Right now, how do you feel?</div>
+                    </div>
+                </div>
+                <div class="ashrae-scale-row" id="tsv-scale">
+                    <button class="ashrae-btn" data-value="-3" onclick="selectASHRAE('tsv',-3)">−3<span>Cold</span></button>
+                    <button class="ashrae-btn" data-value="-2" onclick="selectASHRAE('tsv',-2)">−2<span>Cool</span></button>
+                    <button class="ashrae-btn" data-value="-1" onclick="selectASHRAE('tsv',-1)">−1<span>Slightly Cool</span></button>
+                    <button class="ashrae-btn neutral" data-value="0" onclick="selectASHRAE('tsv',0)">0<span>Neutral</span></button>
+                    <button class="ashrae-btn warm" data-value="1" onclick="selectASHRAE('tsv',1)">+1<span>Slightly Warm</span></button>
+                    <button class="ashrae-btn warm" data-value="2" onclick="selectASHRAE('tsv',2)">+2<span>Warm</span></button>
+                    <button class="ashrae-btn warm" data-value="3" onclick="selectASHRAE('tsv',3)">+3<span>Hot</span></button>
+                </div>
+                <div class="ashrae-selected-label" id="tsv-selected">— Belum dipilih —</div>
+            </div>
+
+            <!-- Q2: Thermal Preference Vote (TPV) -->
+            <div class="ashrae-question-block">
+                <div class="ashrae-question-header">
+                    <span class="ashrae-qnum">Q2</span>
+                    <div>
+                        <div class="ashrae-var-name">Thermal Preference Vote (TPV)</div>
+                        <div class="ashrae-question-text">Right now, would you prefer to be...?</div>
+                    </div>
+                </div>
+                <div class="ashrae-scale-row" id="tpv-scale">
+                    <button class="ashrae-btn" data-value="-1" onclick="selectASHRAE('tpv',-1)">−1<span>Cooler</span></button>
+                    <button class="ashrae-btn neutral" data-value="0" onclick="selectASHRAE('tpv',0)">0<span>No Change</span></button>
+                    <button class="ashrae-btn warm" data-value="1" onclick="selectASHRAE('tpv',1)">+1<span>Warmer</span></button>
+                </div>
+                <div class="ashrae-selected-label" id="tpv-selected">— Belum dipilih —</div>
+            </div>
+
+            <!-- Q3: Thermal Satisfaction -->
+            <div class="ashrae-question-block">
+                <div class="ashrae-question-header">
+                    <span class="ashrae-qnum">Q3</span>
+                    <div>
+                        <div class="ashrae-var-name">Thermal Satisfaction</div>
+                        <div class="ashrae-question-text">How satisfied are you with the thermal environment?</div>
+                    </div>
+                </div>
+                <div class="ashrae-scale-row" id="tsatisfaction-scale">
+                    <button class="ashrae-btn dissatisfied" data-value="-3" onclick="selectASHRAE('tsatisfaction',-3)">−3<span>Very Dissatisfied</span></button>
+                    <button class="ashrae-btn dissatisfied" data-value="-2" onclick="selectASHRAE('tsatisfaction',-2)">−2<span>Dissatisfied</span></button>
+                    <button class="ashrae-btn dissatisfied" data-value="-1" onclick="selectASHRAE('tsatisfaction',-1)">−1<span>Slightly Dissatisfied</span></button>
+                    <button class="ashrae-btn neutral" data-value="0" onclick="selectASHRAE('tsatisfaction',0)">0<span>Neutral</span></button>
+                    <button class="ashrae-btn satisfied" data-value="1" onclick="selectASHRAE('tsatisfaction',1)">+1<span>Slightly Satisfied</span></button>
+                    <button class="ashrae-btn satisfied" data-value="2" onclick="selectASHRAE('tsatisfaction',2)">+2<span>Satisfied</span></button>
+                    <button class="ashrae-btn satisfied" data-value="3" onclick="selectASHRAE('tsatisfaction',3)">+3<span>Very Satisfied</span></button>
+                </div>
+                <div class="ashrae-selected-label" id="tsatisfaction-selected">— Belum dipilih —</div>
+            </div>
+
+            <!-- Comment -->
+            <div style="margin-top: 14px;">
+                <label style="font-size:13px; font-weight:600; color:var(--text-secondary); display:block; margin-bottom:6px;">Additional Comments (optional)</label>
+                <textarea id="thermal-feedback-comment" class="feedback-input" rows="3" placeholder="Describe your thermal comfort experience..."></textarea>
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap;">
+                <button class="btn btn-primary" onclick="submitThermalFeedback()">
+                    <i class="fas fa-paper-plane"></i> Submit Thermal Feedback
+                </button>
+                <button class="btn" style="background: var(--surface-2);" onclick="resetThermalForm()">
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+            </div>
+        </div>
+
+        <!-- History -->
+        <div class="chart-container">
+            <div class="chart-header">
+                <div class="chart-title">Recent Thermal Feedback</div>
+                <div class="chart-options">
+                    <button class="chart-option-btn" onclick="exportThermalFeedback()">
+                        <i class="fas fa-download"></i> Export CSV
+                    </button>
+                </div>
+            </div>
+            <div id="thermal-feedback-history"></div>
+        </div>
+    </div>
+
+    <!-- Trend Chart -->
+    <div class="chart-container" style="margin-top: 20px;">
+        <div class="chart-header">
+            <div class="chart-title">Thermal Comfort Trend</div>
+            <div class="chart-options">
+                <button class="chart-option-btn active" onclick="changeThermalChartRange(24)">24h</button>
+                <button class="chart-option-btn" onclick="changeThermalChartRange(168)">7d</button>
+            </div>
+        </div>
+        <canvas id="thermalComfortChart" height="48"></canvas>
+    </div>
+</div>

@@ -1,0 +1,217 @@
+<div id="monitoring" class="page">
+    <div class="header">
+        <h1>Environmental Monitoring</h1>
+        <p>Real-time indoor &amp; outdoor environmental conditions — Sensor data from Smart Room IoT</p>
+    </div>
+
+    <!-- ========== INDOOR MONITORING ========== -->
+    <div class="monitoring-section-title">
+        <i class="fas fa-building"></i> Indoor Monitoring
+    </div>
+    <div class="monitoring-grid">
+        <!-- Air Flow Velocity -->
+        <div class="monitor-card">
+            <div class="card-icon" style="background: rgba(59, 130, 246, 0.12); color: #3b82f6;">
+                <i class="fas fa-wind"></i>
+            </div>
+            <div class="card-label">Air Flow Velocity</div>
+            <div class="card-value" style="color: #3b82f6;">
+                <span id="mon-airflow">--</span><span class="card-unit"> m/s</span>
+            </div>
+            <div class="card-status offline" id="mon-airflow-status">Awaiting Sensor</div>
+            <div class="monitor-card-chart">
+                <canvas id="monAirflowChart" height="60"></canvas>
+            </div>
+        </div>
+
+        <!-- CO2 — terhubung ke ESP Outdoor via MQTT -->
+        <div class="monitor-card">
+            <div class="card-icon" style="background: rgba(14, 165, 233, 0.12); color: #0ea5e9;">
+                <i class="fas fa-smog"></i>
+            </div>
+            <div class="card-label">CO&#x2082; Level</div>
+            <div class="card-value" style="color: #0ea5e9;">
+                <span id="mon-co2">--</span><span class="card-unit"> ppm</span>
+            </div>
+            <div class="card-status offline" id="mon-co2-status">Awaiting Sensor</div>
+            <div class="monitor-card-chart">
+                <canvas id="monCO2Chart" height="60"></canvas>
+            </div>
+        </div>
+
+        <!-- Indoor Temp (from existing AC sensor) -->
+        <div class="monitor-card">
+            <div class="card-icon" style="background: rgba(37, 99, 235, 0.12); color: #2563eb;">
+                <i class="fas fa-thermometer-half"></i>
+            </div>
+            <div class="card-label">Indoor Temperature</div>
+            <div class="card-value" style="color: #2563eb;">
+                <span id="mon-indoor-temp">--</span><span class="card-unit"> &deg;C</span>
+            </div>
+            <div class="card-status good" id="mon-indoor-temp-status">Live</div>
+        </div>
+
+        <!-- Indoor Humidity (from existing AC sensor) -->
+        <div class="monitor-card">
+            <div class="card-icon" style="background: rgba(30, 64, 175, 0.12); color: #1e40af;">
+                <i class="fas fa-tint"></i>
+            </div>
+            <div class="card-label">Indoor Humidity</div>
+            <div class="card-value" style="color: #1e40af;">
+                <span id="mon-indoor-hum">--</span><span class="card-unit"> %</span>
+            </div>
+            <div class="card-status good" id="mon-indoor-hum-status">Live</div>
+        </div>
+    </div>
+
+    <hr class="monitor-divider">
+
+    <!-- ========== OUTDOOR ESP32 SENSOR NODE ========== -->
+    <div class="monitoring-section-title">
+        <i class="fas fa-broadcast-tower"></i> Outdoor ESP32 Sensor Node
+        <span style="margin-left: auto; font-size: 12px; font-weight: 500; color: var(--text-secondary);">
+            Status: <span id="mon-outdoor-esp-status"
+                style="font-weight: 700; color: var(--text-secondary);">Offline</span>
+            &bull; Uptime: <span id="mon-outdoor-uptime">--</span>s
+            &bull; RSSI: <span id="mon-outdoor-rssi">--</span> dBm
+        </span>
+    </div>
+    <div class="monitoring-grid">
+        <!-- Outdoor Temperature (dari ESP Outdoor) -->
+        <div class="monitor-card">
+            <div class="card-icon" style="background: rgba(239, 68, 68, 0.12); color: #ef4444;">
+                <i class="fas fa-temperature-high"></i>
+            </div>
+            <div class="card-label">Outdoor Temperature</div>
+            <div class="card-value" style="color: #ef4444;">
+                <span id="mon-outdoor-temp">--</span><span class="card-unit"> &deg;C</span>
+            </div>
+            <div class="card-status offline" id="mon-outdoor-temp-status">Awaiting Sensor</div>
+        </div>
+
+        <!-- Outdoor Humidity (dari ESP Outdoor) -->
+        <div class="monitor-card">
+            <div class="card-icon" style="background: rgba(6, 182, 212, 0.12); color: #06b6d4;">
+                <i class="fas fa-tint"></i>
+            </div>
+            <div class="card-label">Outdoor Humidity (RH)</div>
+            <div class="card-value" style="color: #06b6d4;">
+                <span id="mon-outdoor-hum">--</span><span class="card-unit"> %</span>
+            </div>
+            <div class="card-status offline" id="mon-outdoor-hum-status">Awaiting Sensor</div>
+        </div>
+
+        <!-- CO2 Outdoor (dari ESP Outdoor) -->
+        <div class="monitor-card">
+            <div class="card-icon" style="background: rgba(34, 197, 94, 0.12); color: #22c55e;">
+                <i class="fas fa-cloud"></i>
+            </div>
+            <div class="card-label">Outdoor CO&#x2082;</div>
+            <div class="card-value" style="color: #22c55e;">
+                <span id="mon-outdoor-co2">--</span><span class="card-unit"> ppm</span>
+            </div>
+            <div class="card-status offline" id="mon-outdoor-co2-status">Awaiting Sensor</div>
+            <!-- CO2 Quality Bar -->
+            <div style="margin-top: 8px;">
+                <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--text-secondary); margin-bottom:3px;">
+                    <span>Udara Baik</span><span>Buruk</span>
+                </div>
+                <div style="height:6px; border-radius:4px; background: linear-gradient(to right, #22c55e, #f59e0b, #ef4444); overflow:visible; position:relative;">
+                    <div id="mon-co2-bar-indicator"
+                        style="position:absolute; top:-2px; width:10px; height:10px; border-radius:50%; background:#fff; border:2px solid #666; transition: left 0.5s ease; left: 5%;"></div>
+                </div>
+                <div style="font-size:11px; color:var(--text-secondary); margin-top:6px; text-align:center;">
+                    <span id="mon-outdoor-co2-label">--</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Outdoor Lux (dari ESP Outdoor) -->
+        <div class="monitor-card">
+            <div class="card-icon" style="background: rgba(245, 158, 11, 0.12); color: #f59e0b;">
+                <i class="fas fa-sun"></i>
+            </div>
+            <div class="card-label">Outdoor Illuminance (Lux)</div>
+            <div class="card-value" style="color: #f59e0b;">
+                <span id="mon-out-lux">--</span><span class="card-unit"> lx</span>
+            </div>
+            <div class="card-status offline" id="mon-out-lux-status">Awaiting Sensor</div>
+        </div>
+    </div>
+
+    <hr class="monitor-divider">
+
+    <!-- ========== OUTDOOR WEATHER (Open-Meteo API) ========== -->
+    <div class="monitoring-section-title">
+        <i class="fas fa-cloud-sun"></i> Outdoor Weather (Open-Meteo API)
+        <span style="margin-left: auto; font-size: 12px; font-weight: 500; color: var(--text-secondary);">
+            <i class="fas fa-map-marker-alt"></i> UNS Surakarta &mdash; Updated: <span id="mon-outdoor-updated">--:--</span>
+        </span>
+    </div>
+    <div class="monitoring-grid">
+        <!-- Outdoor Temperature (API) -->
+        <div class="monitor-card">
+            <div class="card-icon" style="background: rgba(239, 68, 68, 0.12); color: #ef4444;">
+                <i class="fas fa-temperature-high"></i>
+            </div>
+            <div class="card-label">Outdoor Temperature</div>
+            <div class="card-value" style="color: #ef4444;">
+                <span id="mon-out-temp">--</span><span class="card-unit"> &deg;C</span>
+            </div>
+            <div style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">
+                Feels like: <span id="mon-out-feels">--</span>&deg;C
+            </div>
+        </div>
+
+        <!-- Outdoor Humidity (API) -->
+        <div class="monitor-card">
+            <div class="card-icon" style="background: rgba(6, 182, 212, 0.12); color: #06b6d4;">
+                <i class="fas fa-tint"></i>
+            </div>
+            <div class="card-label">Outdoor Humidity (RH)</div>
+            <div class="card-value" style="color: #06b6d4;">
+                <span id="mon-out-hum">--</span><span class="card-unit"> %</span>
+            </div>
+        </div>
+
+        <!-- Solar Irradiance -->
+        <div class="monitor-card">
+            <div class="card-icon" style="background: rgba(234, 88, 12, 0.12); color: #ea580c;">
+                <i class="fas fa-solar-panel"></i>
+            </div>
+            <div class="card-label">Solar Irradiance</div>
+            <div class="card-value" style="color: #ea580c;">
+                <span id="mon-out-solar">--</span><span class="card-unit"> W/m&sup2;</span>
+            </div>
+            <div class="card-status offline" id="mon-out-solar-status">Awaiting Sensor</div>
+        </div>
+
+        <!-- Weather Condition -->
+        <div class="monitor-card">
+            <div class="card-icon" style="background: rgba(99, 102, 241, 0.12); color: #6366f1;">
+                <i class="fas fa-cloud"></i>
+            </div>
+            <div class="card-label">Weather Condition</div>
+            <div class="card-value" style="color: #6366f1; font-size: 20px;">
+                <span id="mon-out-weather-icon">&#x2600;&#xFE0F;</span>
+                <span id="mon-out-weather-desc">--</span>
+            </div>
+            <div style="font-size: 12px; color: var(--text-secondary); margin-top: 6px;">
+                Wind: <span id="mon-out-wind">--</span> km/h &bull;
+                Cloud: <span id="mon-out-cloud">--</span>% &bull;
+                UV: <span id="mon-out-uv">--</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Banner -->
+    <div style="margin-top: 10px; padding: 14px 18px; border-radius: 12px; background: rgba(37, 99, 235, 0.06); border: 1px solid var(--border); font-size: 13px; color: var(--text-secondary); display: flex; align-items: center; gap: 10px;">
+        <i class="fas fa-info-circle" style="color: var(--primary); font-size: 16px;"></i>
+        <span>
+            <strong>Note:</strong> Outdoor Temp, Humi, CO&#x2082;, dan Lux menggunakan
+            <strong>ESP32 Outdoor Sensor Node</strong> via MQTT (<code>smartroom/outdoor/sensors</code>).
+            Data cuaca (Weather API) diambil dari Open-Meteo API (UNS Surakarta).
+            Air Flow Velocity dan Solar Irradiance menunggu sensor fisik.
+        </span>
+    </div>
+</div>

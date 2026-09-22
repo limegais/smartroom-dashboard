@@ -1,0 +1,1781 @@
+<div id="ml-optimization" class="page">
+  <div class="header">
+    <h1>Machine Learning Optimization</h1>
+    <p>
+      Select optimization algorithm for Adaptive AC & Lamp | Auto-optimized in
+      ADAPTIVE mode
+    </p>
+  </div>
+
+  <!-- Algorithm Selector -->
+  <div class="chart-container" style="margin-bottom: 20px">
+    <div class="chart-header">
+      <div class="chart-title">Select Algorithm Configuration</div>
+      <div class="chart-options">
+        <span
+          id="algo-status"
+          style="
+            font-size: 14px;
+            color: #10b981;
+            font-weight: 500;
+            margin-right: 15px;
+            opacity: 0;
+            transition: opacity 0.3s;
+          "
+          >Saved</span
+        >
+      </div>
+    </div>
+    <div
+      class="algo-selector-grid"
+      style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        padding: 15px;
+      "
+    >
+      <!-- Option 1: GA | PSO (Default) -->
+      <div
+        class="algo-card active"
+        data-config="ga_pso"
+        onclick="setAlgoConfig('ga_pso')"
+        style="
+          border: 2px solid #3b82f6;
+          border-radius: 8px;
+          padding: 15px;
+          cursor: pointer;
+          position: relative;
+          background: rgba(59, 130, 246, 0.05);
+          transition: all 0.2s;
+        "
+      >
+        <div style="font-weight: 600; color: #1e293b; margin-bottom: 10px">
+          GA
+          <span style="color: #94a3b8; font-weight: 400; margin: 0 4px">|</span>
+          PSO
+        </div>
+        <div style="font-size: 13px; color: #64748b">
+          AC:
+          <span style="color: #3b82f6; font-weight: 600"
+            >Genetic Algorithm</span
+          >
+        </div>
+        <div style="font-size: 13px; color: #64748b">
+          Lamp:
+          <span style="color: #0ea5e9; font-weight: 600">Particle Swarm</span>
+        </div>
+        <div
+          class="algo-badge"
+          style="
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #3b82f6;
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+          "
+        >
+          ACTIVE
+        </div>
+      </div>
+
+      <!-- Option 2: PSO | GA -->
+      <div
+        class="algo-card"
+        data-config="pso_ga"
+        onclick="setAlgoConfig('pso_ga')"
+        style="
+          border: 1px solid #e2e8f0;
+          border-radius: 8px;
+          padding: 15px;
+          cursor: pointer;
+          position: relative;
+          transition: all 0.2s;
+        "
+      >
+        <div style="font-weight: 600; color: #1e293b; margin-bottom: 10px">
+          PSO
+          <span style="color: #94a3b8; font-weight: 400; margin: 0 4px">|</span>
+          GA
+        </div>
+        <div style="font-size: 13px; color: #64748b">
+          AC:
+          <span style="color: #0ea5e9; font-weight: 600">Particle Swarm</span>
+        </div>
+        <div style="font-size: 13px; color: #64748b">
+          Lamp:
+          <span style="color: #3b82f6; font-weight: 600"
+            >Genetic Algorithm</span
+          >
+        </div>
+        <div
+          class="algo-badge"
+          style="
+            display: none;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #3b82f6;
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+          "
+        >
+          ACTIVE
+        </div>
+      </div>
+
+      <!-- Option 3: GA | GA -->
+      <div
+        class="algo-card"
+        data-config="ga_ga"
+        onclick="setAlgoConfig('ga_ga')"
+        style="
+          border: 1px solid #e2e8f0;
+          border-radius: 8px;
+          padding: 15px;
+          cursor: pointer;
+          position: relative;
+          transition: all 0.2s;
+        "
+      >
+        <div style="font-weight: 600; color: #1e293b; margin-bottom: 10px">
+          GA
+          <span style="color: #94a3b8; font-weight: 400; margin: 0 4px">|</span>
+          GA
+        </div>
+        <div style="font-size: 13px; color: #64748b">
+          AC:
+          <span style="color: #3b82f6; font-weight: 600"
+            >Genetic Algorithm</span
+          >
+        </div>
+        <div style="font-size: 13px; color: #64748b">
+          Lamp:
+          <span style="color: #3b82f6; font-weight: 600"
+            >Genetic Algorithm</span
+          >
+        </div>
+        <div
+          class="algo-badge"
+          style="
+            display: none;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #3b82f6;
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+          "
+        >
+          ACTIVE
+        </div>
+      </div>
+
+      <!-- Option 4: PSO | PSO -->
+      <div
+        class="algo-card"
+        data-config="pso_pso"
+        onclick="setAlgoConfig('pso_pso')"
+        style="
+          border: 1px solid #e2e8f0;
+          border-radius: 8px;
+          padding: 15px;
+          cursor: pointer;
+          position: relative;
+          transition: all 0.2s;
+        "
+      >
+        <div style="font-weight: 600; color: #1e293b; margin-bottom: 10px">
+          PSO
+          <span style="color: #94a3b8; font-weight: 400; margin: 0 4px">|</span>
+          PSO
+        </div>
+        <div style="font-size: 13px; color: #64748b">
+          AC:
+          <span style="color: #0ea5e9; font-weight: 600">Particle Swarm</span>
+        </div>
+        <div style="font-size: 13px; color: #64748b">
+          Lamp:
+          <span style="color: #0ea5e9; font-weight: 600">Particle Swarm</span>
+        </div>
+        <div
+          class="algo-badge"
+          style="
+            display: none;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #3b82f6;
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+          "
+        >
+          ACTIVE
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ML Summary Cards -->
+  <div
+    class="stats-grid"
+    style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))"
+  >
+    <div class="stat-card">
+      <div class="stat-header">
+        <span class="stat-title" id="summary-ac-title">GA -> AC</span>
+        <div
+          class="stat-icon"
+          id="summary-ac-icon"
+          style="background: rgba(59, 130, 246, 0.2); color: #3b82f6"
+        >
+          GA
+        </div>
+      </div>
+      <div class="stat-value" style="font-size: 28px">
+        <span id="ml-ga-fitness" style="color: #3b82f6">0.00</span>
+      </div>
+      <div class="stat-change"><span>Best Fitness</span></div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-header">
+        <span class="stat-title">Optimized Temp</span>
+        <div
+          class="stat-icon"
+          style="background: rgba(30, 64, 175, 0.2); color: #1e40af"
+        >
+          T
+        </div>
+      </div>
+      <div class="stat-value" style="font-size: 28px">
+        <span id="ml-ga-temp" style="color: #1e40af">--</span>°C
+      </div>
+      <div class="stat-change">
+        <span
+          >Fan: <span id="ml-ga-fan" style="font-weight: bold">--</span> | Mode:
+          <span id="ml-ga-mode" style="font-weight: bold; color: #1e40af"
+            >--</span
+          >
+          | RH:
+          <span id="ml-ga-rh" style="font-weight: bold; color: #3b82f6">--</span
+          >%</span
+        >
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-header">
+        <span class="stat-title" id="summary-lamp-title">PSO -> Lamp</span>
+        <div
+          class="stat-icon"
+          id="summary-lamp-icon"
+          style="background: rgba(14, 165, 233, 0.2); color: #0ea5e9"
+        >
+          PSO
+        </div>
+      </div>
+      <div class="stat-value" style="font-size: 28px">
+        <span id="ml-pso-fitness" style="color: #0ea5e9">0.0</span
+        ><span style="font-size: 16px; color: #94a3b8">%</span>
+      </div>
+      <div class="stat-change">
+        <span>Lux Accuracy (100% = exactly 350 lux)</span>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-header">
+        <span class="stat-title">PWM Optimal</span>
+        <div
+          class="stat-icon"
+          style="background: rgba(37, 99, 235, 0.2); color: #2563eb"
+        >
+          PWM
+        </div>
+      </div>
+      <div class="stat-value" style="font-size: 20px; line-height: 1.8">
+        PWM1:
+        <span id="ml-pso-pwm1" style="color: #2563eb; font-weight: 700">--</span
+        ><small style="color: #94a3b8">/255</small><br />
+        PWM2:
+        <span id="ml-pso-pwm2" style="color: #2563eb; font-weight: 700">--</span
+        ><small style="color: #94a3b8">/255</small>
+      </div>
+      <div class="stat-change">
+        Lux1:
+        <span id="ml-pso-lux1" style="color: #22d3ee; font-weight: 600"
+          >--</span
+        >
+        &nbsp;Lux2:
+        <span id="ml-pso-lux2" style="color: #22d3ee; font-weight: 600"
+          >--</span
+        >
+        &nbsp;Lux3:
+        <span id="ml-pso-lux3" style="color: #22d3ee; font-weight: 600"
+          >--</span
+        >
+        lx
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-header">
+        <span class="stat-title">Current Conditions</span>
+        <div
+          class="stat-icon"
+          style="background: rgba(37, 99, 235, 0.2); color: #2563eb"
+        >
+          DB
+        </div>
+      </div>
+      <div class="stat-value" style="font-size: 14px; line-height: 1.8">
+        Temp: <span id="ml-cur-temp">--</span>°C &nbsp; Hum:
+        <span id="ml-cur-hum">--</span>%<br />
+        Lux: <span id="ml-cur-lux">--</span> lux &nbsp; Person:
+        <span id="ml-cur-person">--</span>
+      </div>
+      <div class="stat-change"><span>From InfluxDB</span></div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-header">
+        <span class="stat-title">Optimization Runs</span>
+        <div
+          class="stat-icon"
+          style="background: rgba(37, 99, 235, 0.2); color: #2563eb"
+        >
+          #
+        </div>
+      </div>
+      <div class="stat-value" style="font-size: 28px">
+        <span id="ml-opt-runs" style="color: #2563eb">0</span>
+      </div>
+      <div class="stat-change"><span>Total Cycles</span></div>
+    </div>
+  </div>
+
+  <!-- GA Fitness Convergence Chart -->
+  <div class="chart-container">
+    <div class="chart-header">
+      <div class="chart-title" id="chart-ac-title">
+        GA Fitness Convergence (AC Optimization)
+      </div>
+      <div class="chart-options">
+        <button
+          class="chart-option-btn"
+          onclick="exportGAReport()"
+          title="Export AC Report"
+        >
+          <i class="fas fa-download"></i>
+        </button>
+        <button
+          class="chart-option-btn"
+          onclick="exportChartRange('gaFitness', 'AC Fitness')"
+          title="Export date range"
+        >
+          &#128197;
+        </button>
+      </div>
+    </div>
+    <!-- AC Iteration/Generation detail table (live progress) -->
+    <div
+      id="ac-iter-table-wrap"
+      style="overflow-x: auto; margin-bottom: 8px; display: none"
+    >
+      <table style="width: 100%; border-collapse: collapse; font-size: 12px">
+        <thead>
+          <tr style="background: rgba(59, 130, 246, 0.15)">
+            <th
+              style="
+                padding: 4px 8px;
+                text-align: center;
+                border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+              "
+            >
+              Iter/Gen
+            </th>
+            <th
+              style="
+                padding: 4px 8px;
+                text-align: center;
+                border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+              "
+            >
+              Best Temp
+            </th>
+            <th
+              style="
+                padding: 4px 8px;
+                text-align: center;
+                border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+              "
+            >
+              Fan
+            </th>
+            <th
+              style="
+                padding: 4px 8px;
+                text-align: center;
+                border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+              "
+            >
+              Mode
+            </th>
+            <th
+              style="
+                padding: 4px 8px;
+                text-align: center;
+                border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+              "
+            >
+              Set RH
+            </th>
+            <th
+              style="
+                padding: 4px 8px;
+                text-align: center;
+                border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+              "
+            >
+              Fitness (%)
+            </th>
+          </tr>
+        </thead>
+        <tbody id="ac-iter-tbody"></tbody>
+      </table>
+    </div>
+    <canvas id="gaFitnessChart" height="80"></canvas>
+  </div>
+
+  <!-- PSO Iteration Detail Chart -->
+  <div class="chart-container">
+    <div class="chart-header">
+      <div class="chart-title" id="chart-lamp-title">
+        PSO — Detail Iteration (PWM1, PWM2, Lux Avg per Iteration)
+      </div>
+      <div class="chart-options">
+        <button
+          class="chart-option-btn"
+          onclick="exportPSOReport()"
+          title="Export Lamp Report"
+        >
+          <i class="fas fa-download"></i>
+        </button>
+        <button
+          class="chart-option-btn"
+          onclick="exportChartRange('psoFitness', 'Lamp Fitness')"
+          title="Export date range"
+        >
+          &#128197;
+        </button>
+      </div>
+    </div>
+    <!-- Iteration detail table -->
+    <div
+      id="pso-iter-table-wrap"
+      style="overflow-x: auto; margin-bottom: 8px; display: none"
+    >
+      <table style="width: 100%; border-collapse: collapse; font-size: 12px">
+        <thead>
+          <tr style="background: rgba(14, 165, 233, 0.15)">
+            <th
+              style="
+                padding: 4px 8px;
+                text-align: center;
+                border-bottom: 1px solid rgba(14, 165, 233, 0.3);
+              "
+            >
+              Iteration
+            </th>
+            <th
+              style="
+                padding: 4px 8px;
+                text-align: center;
+                border-bottom: 1px solid rgba(14, 165, 233, 0.3);
+              "
+            >
+              PWM 1
+            </th>
+            <th
+              style="
+                padding: 4px 8px;
+                text-align: center;
+                border-bottom: 1px solid rgba(14, 165, 233, 0.3);
+              "
+            >
+              PWM 2
+            </th>
+            <th
+              style="
+                padding: 4px 8px;
+                text-align: center;
+                border-bottom: 1px solid rgba(14, 165, 233, 0.3);
+              "
+            >
+              Lux 1
+            </th>
+            <th
+              style="
+                padding: 4px 8px;
+                text-align: center;
+                border-bottom: 1px solid rgba(14, 165, 233, 0.3);
+              "
+            >
+              Lux 2
+            </th>
+            <th
+              style="
+                padding: 4px 8px;
+                text-align: center;
+                border-bottom: 1px solid rgba(14, 165, 233, 0.3);
+              "
+            >
+              Lux 3
+            </th>
+            <th
+              style="
+                padding: 4px 8px;
+                text-align: center;
+                border-bottom: 1px solid rgba(14, 165, 233, 0.3);
+              "
+            >
+              Lux Avg
+            </th>
+            <th
+              style="
+                padding: 4px 8px;
+                text-align: center;
+                border-bottom: 1px solid rgba(14, 165, 233, 0.3);
+              "
+            >
+              Fitness (%)
+            </th>
+            <th
+              style="
+                padding: 4px 8px;
+                text-align: center;
+                border-bottom: 1px solid rgba(14, 165, 233, 0.3);
+              "
+            >
+              Status
+            </th>
+          </tr>
+        </thead>
+        <tbody id="pso-iter-tbody"></tbody>
+      </table>
+    </div>
+    <canvas id="psoFitnessChart" height="100"></canvas>
+  </div>
+
+  <!-- Optimization History Table -->
+  <div class="chart-container">
+    <div class="chart-header">
+      <div class="chart-title">Optimization History</div>
+      <div class="chart-options">
+        <button class="chart-option-btn" onclick="exportMLHistory()">
+          <i class="fas fa-download"></i> Export CSV
+        </button>
+        <button class="chart-option-btn" onclick="refreshMLHistory()">
+          Refresh
+        </button>
+      </div>
+    </div>
+    <div style="overflow-x: auto">
+      <table class="ml-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Time</th>
+            <th>Mode</th>
+            <th><span id="hist-ac-title">GA</span> Fitness</th>
+            <th>AC Temp</th>
+            <th>Fan Speed</th>
+            <th><span id="hist-lamp-title">PSO</span> Fitness</th>
+            <th>Brightness</th>
+            <th>Combined</th>
+          </tr>
+        </thead>
+        <tbody id="ml-history-body">
+          <tr>
+            <td colspan="8" style="text-align: center; color: #94a3b8">
+              No optimization data yet. Set mode to ADAPTIVE to start automatic
+              optimization.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ==================== EXPORT FITNESS HISTORY DATABASE ==================== -->
+  <div class="chart-container" style="margin-bottom: 20px">
+    <div class="chart-header">
+      <div class="chart-title">📥 Export Fitness History dari Database</div>
+      <div class="chart-options" style="font-size: 12px; color: #64748b">
+        Data tersimpan otomatis setiap kali optimasi dijalankan
+      </div>
+    </div>
+    <div style="padding: 16px 20px">
+      <!-- GA Fitness History -->
+      <div
+        style="
+          background: rgba(59, 130, 246, 0.06);
+          border: 1px solid rgba(59, 130, 246, 0.2);
+          border-radius: 10px;
+          padding: 16px;
+          margin-bottom: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+          "
+        >
+          <div
+            style="
+              background: #3b82f6;
+              color: #fff;
+              font-size: 11px;
+              font-weight: 700;
+              padding: 3px 8px;
+              border-radius: 5px;
+              letter-spacing: 0.5px;
+            "
+          >
+            GA
+          </div>
+          <span style="font-size: 14px; font-weight: 600; color: #e2e8f0">
+            GA Fitness History — Per Generasi (AC Optimization)
+          </span>
+        </div>
+        <div style="font-size: 12px; color: #94a3b8; margin-bottom: 12px">
+          Kolom: Timestamp · Run # · Generasi · Fitness (raw) · Fitness (%) ·
+          Set Temp AC · Fan Speed · Mode · Set RH
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 10px;
+            align-items: flex-end;
+            flex-wrap: wrap;
+          "
+        >
+          <div>
+            <label
+              style="
+                display: block;
+                font-size: 11px;
+                color: #64748b;
+                margin-bottom: 4px;
+                text-transform: uppercase;
+                letter-spacing: 0.4px;
+              "
+              >Dari</label
+            >
+            <input
+              type="date"
+              id="db-ga_fitness-from"
+              style="
+                width: 100%;
+                padding: 7px 10px;
+                border-radius: 7px;
+                background: #0f172a;
+                border: 1px solid rgba(148, 163, 184, 0.25);
+                color: #e2e8f0;
+                font-size: 13px;
+                box-sizing: border-box;
+                cursor: pointer;
+              "
+            />
+          </div>
+          <div>
+            <label
+              style="
+                display: block;
+                font-size: 11px;
+                color: #64748b;
+                margin-bottom: 4px;
+                text-transform: uppercase;
+                letter-spacing: 0.4px;
+              "
+              >Sampai</label
+            >
+            <input
+              type="date"
+              id="db-ga_fitness-to"
+              style="
+                width: 100%;
+                padding: 7px 10px;
+                border-radius: 7px;
+                background: #0f172a;
+                border: 1px solid rgba(148, 163, 184, 0.25);
+                color: #e2e8f0;
+                font-size: 13px;
+                box-sizing: border-box;
+                cursor: pointer;
+              "
+            />
+          </div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap">
+            <button
+              onclick="dbExportSetToday('ga_fitness')"
+              style="
+                padding: 7px 12px;
+                border-radius: 7px;
+                background: rgba(59, 130, 246, 0.15);
+                border: 1px solid rgba(59, 130, 246, 0.3);
+                color: #93c5fd;
+                font-size: 11px;
+                cursor: pointer;
+              "
+            >
+              Hari ini
+            </button>
+            <button
+              onclick="dbExportSet7d('ga_fitness')"
+              style="
+                padding: 7px 12px;
+                border-radius: 7px;
+                background: rgba(59, 130, 246, 0.15);
+                border: 1px solid rgba(59, 130, 246, 0.3);
+                color: #93c5fd;
+                font-size: 11px;
+                cursor: pointer;
+              "
+            >
+              7 Hari
+            </button>
+            <button
+              onclick="dbExportSet30d('ga_fitness')"
+              style="
+                padding: 7px 12px;
+                border-radius: 7px;
+                background: rgba(59, 130, 246, 0.15);
+                border: 1px solid rgba(59, 130, 246, 0.3);
+                color: #93c5fd;
+                font-size: 11px;
+                cursor: pointer;
+              "
+            >
+              30 Hari
+            </button>
+            <button
+              onclick="dbExportCSV('ga_fitness')"
+              style="
+                padding: 7px 16px;
+                border-radius: 7px;
+                background: linear-gradient(135deg, #2563eb, #1d4ed8);
+                border: none;
+                color: #fff;
+                font-size: 12px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: opacity 0.2s;
+              "
+              onmouseover="this.style.opacity = '0.85'"
+              onmouseout="this.style.opacity = '1'"
+            >
+              📥 Download CSV
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PSO Fitness History -->
+      <div
+        style="
+          background: rgba(14, 165, 233, 0.06);
+          border: 1px solid rgba(14, 165, 233, 0.2);
+          border-radius: 10px;
+          padding: 16px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+          "
+        >
+          <div
+            style="
+              background: #0ea5e9;
+              color: #fff;
+              font-size: 11px;
+              font-weight: 700;
+              padding: 3px 8px;
+              border-radius: 5px;
+              letter-spacing: 0.5px;
+            "
+          >
+            PSO
+          </div>
+          <span style="font-size: 14px; font-weight: 600; color: #e2e8f0">
+            PSO Fitness History — Per Iterasi (Lamp Optimization)
+          </span>
+        </div>
+        <div style="font-size: 12px; color: #94a3b8; margin-bottom: 12px">
+          Kolom: Timestamp · Run # · Iterasi · Fitness Error · Akurasi Lux (%) ·
+          PWM1 · PWM2 · Brightness 1 · Brightness 2 · Lux 1 · Lux 2 · Lux 3 ·
+          Lux Avg
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 10px;
+            align-items: flex-end;
+            flex-wrap: wrap;
+          "
+        >
+          <div>
+            <label
+              style="
+                display: block;
+                font-size: 11px;
+                color: #64748b;
+                margin-bottom: 4px;
+                text-transform: uppercase;
+                letter-spacing: 0.4px;
+              "
+              >Dari</label
+            >
+            <input
+              type="date"
+              id="db-pso_fitness-from"
+              style="
+                width: 100%;
+                padding: 7px 10px;
+                border-radius: 7px;
+                background: #0f172a;
+                border: 1px solid rgba(148, 163, 184, 0.25);
+                color: #e2e8f0;
+                font-size: 13px;
+                box-sizing: border-box;
+                cursor: pointer;
+              "
+            />
+          </div>
+          <div>
+            <label
+              style="
+                display: block;
+                font-size: 11px;
+                color: #64748b;
+                margin-bottom: 4px;
+                text-transform: uppercase;
+                letter-spacing: 0.4px;
+              "
+              >Sampai</label
+            >
+            <input
+              type="date"
+              id="db-pso_fitness-to"
+              style="
+                width: 100%;
+                padding: 7px 10px;
+                border-radius: 7px;
+                background: #0f172a;
+                border: 1px solid rgba(148, 163, 184, 0.25);
+                color: #e2e8f0;
+                font-size: 13px;
+                box-sizing: border-box;
+                cursor: pointer;
+              "
+            />
+          </div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap">
+            <button
+              onclick="dbExportSetToday('pso_fitness')"
+              style="
+                padding: 7px 12px;
+                border-radius: 7px;
+                background: rgba(14, 165, 233, 0.15);
+                border: 1px solid rgba(14, 165, 233, 0.3);
+                color: #7dd3fc;
+                font-size: 11px;
+                cursor: pointer;
+              "
+            >
+              Hari ini
+            </button>
+            <button
+              onclick="dbExportSet7d('pso_fitness')"
+              style="
+                padding: 7px 12px;
+                border-radius: 7px;
+                background: rgba(14, 165, 233, 0.15);
+                border: 1px solid rgba(14, 165, 233, 0.3);
+                color: #7dd3fc;
+                font-size: 11px;
+                cursor: pointer;
+              "
+            >
+              7 Hari
+            </button>
+            <button
+              onclick="dbExportSet30d('pso_fitness')"
+              style="
+                padding: 7px 12px;
+                border-radius: 7px;
+                background: rgba(14, 165, 233, 0.15);
+                border: 1px solid rgba(14, 165, 233, 0.3);
+                color: #7dd3fc;
+                font-size: 11px;
+                cursor: pointer;
+              "
+            >
+              30 Hari
+            </button>
+            <button
+              onclick="dbExportCSV('pso_fitness')"
+              style="
+                padding: 7px 16px;
+                border-radius: 7px;
+                background: linear-gradient(135deg, #0891b2, #0e7490);
+                border: none;
+                color: #fff;
+                font-size: 12px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: opacity 0.2s;
+              "
+              onmouseover="this.style.opacity = '0.85'"
+              onmouseout="this.style.opacity = '1'"
+            >
+              📥 Download CSV
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          margin-top: 10px;
+          padding: 8px 12px;
+          border-radius: 6px;
+          background: rgba(148, 163, 184, 0.05);
+          border: 1px solid rgba(148, 163, 184, 0.1);
+          font-size: 11px;
+          color: #64748b;
+        "
+      >
+        💡 <strong>Info:</strong> Data fitness history disimpan otomatis ke
+        InfluxDB setiap kali optimasi GA/PSO selesai. Rentang data tersedia
+        sejak optimasi pertama dijalankan setelah fitur ini aktif. Kolom
+        <em>Run #</em> menunjukkan siklus optimasi ke berapa.
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== ALGORITHM PARAMETER SETTINGS ==================== -->
+  <div
+    class="chart-container"
+    id="algo-param-settings"
+    style="margin-top: 24px"
+  >
+    <div class="chart-header">
+      <div class="chart-title">⚙️ Algorithm Parameter Settings</div>
+      <div
+        class="chart-options"
+        style="display: flex; align-items: center; gap: 10px"
+      >
+        <span
+          id="param-save-status"
+          style="
+            font-size: 13px;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.4s;
+          "
+        ></span>
+        <button
+          onclick="saveMLParams()"
+          id="btn-save-params"
+          style="
+            padding: 8px 22px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            border: none;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            letter-spacing: 0.3px;
+          "
+          onmouseover="this.style.opacity = '0.85'"
+          onmouseout="this.style.opacity = '1'"
+        >
+          💾 Apply & Save
+        </button>
+      </div>
+    </div>
+
+    <div style="padding: 4px 20px 6px; font-size: 12px; color: #64748b">
+      Ubah parameter algoritma di bawah ini lalu klik
+      <strong>Apply & Save</strong>. Perubahan berlaku langsung pada siklus
+      optimasi berikutnya.
+      <span style="color: #f59e0b; font-weight: 600">
+        ⚠ Parameter kembali ke default jika server di-restart.</span
+      >
+    </div>
+
+    <div
+      style="
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 16px 20px 20px;
+      "
+    >
+      <!-- ===== GA CARD ===== -->
+      <div
+        style="
+          background: rgba(59, 130, 246, 0.05);
+          border: 1px solid rgba(59, 130, 246, 0.25);
+          border-radius: 12px;
+          padding: 18px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+          "
+        >
+          <div style="display: flex; align-items: center; gap: 10px">
+            <div
+              style="
+                background: linear-gradient(135deg, #3b82f6, #2563eb);
+                color: #fff;
+                font-size: 12px;
+                font-weight: 800;
+                padding: 4px 10px;
+                border-radius: 6px;
+                letter-spacing: 0.5px;
+              "
+            >
+              GA
+            </div>
+            <span style="font-size: 15px; font-weight: 700; color: #e2e8f0"
+              >Genetic Algorithm</span
+            >
+          </div>
+          <button
+            onclick="resetGADefaults()"
+            style="
+              padding: 5px 12px;
+              border-radius: 6px;
+              background: rgba(59, 130, 246, 0.12);
+              border: 1px solid rgba(59, 130, 246, 0.3);
+              color: #93c5fd;
+              font-size: 11px;
+              font-weight: 600;
+              cursor: pointer;
+              transition: all 0.2s;
+            "
+            onmouseover="this.style.background = 'rgba(59,130,246,0.25)'"
+            onmouseout="this.style.background = 'rgba(59,130,246,0.12)'"
+          >
+            ↺ Reset Default
+          </button>
+        </div>
+
+        <!-- GA params grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px">
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Jumlah kromosom/individu per generasi. Populasi besar = eksplorasi luas, tapi lebih lambat."
+            >
+              Populasi <span class="param-hint">5–200</span>
+            </label>
+            <input
+              type="number"
+              id="ga-pop-size"
+              min="5"
+              max="200"
+              value="15"
+              class="param-input param-input-blue"
+            />
+            <div class="param-desc">Jumlah kromosom per generasi</div>
+          </div>
+
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Jumlah iterasi evolusi. Generasi banyak = lebih presisi, tapi lebih lama."
+            >
+              Generasi <span class="param-hint">5–500</span>
+            </label>
+            <input
+              type="number"
+              id="ga-generations"
+              min="5"
+              max="500"
+              value="20"
+              class="param-input param-input-blue"
+            />
+            <div class="param-desc">Jumlah iterasi evolusi</div>
+          </div>
+
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Probabilitas mutasi gen secara acak. Tinggi = lebih exploratory, risiko diverge."
+            >
+              Mutation Rate <span class="param-hint">0.01–0.90</span>
+            </label>
+            <input
+              type="number"
+              id="ga-mutation"
+              min="0.01"
+              max="0.90"
+              step="0.01"
+              value="0.30"
+              class="param-input param-input-blue"
+            />
+            <div class="param-desc">Prob. perubahan gen acak</div>
+          </div>
+
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Probabilitas crossover (BLX-α). Tinggi = lebih banyak rekombinasi antar orang tua."
+            >
+              Crossover Rate <span class="param-hint">0.10–1.00</span>
+            </label>
+            <input
+              type="number"
+              id="ga-crossover"
+              min="0.10"
+              max="1.00"
+              step="0.05"
+              value="0.85"
+              class="param-input param-input-blue"
+            />
+            <div class="param-desc">Prob. rekombinasi kromosom</div>
+          </div>
+
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Persentase individu terbaik yang otomatis lolos ke generasi berikutnya (elitisme)."
+            >
+              Elitisme (%) <span class="param-hint">0.00–0.50</span>
+            </label>
+            <input
+              type="number"
+              id="ga-elitism"
+              min="0.00"
+              max="0.50"
+              step="0.05"
+              value="0.20"
+              class="param-input param-input-blue"
+            />
+            <div class="param-desc">Rasio survivor terbaik</div>
+          </div>
+
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Jumlah kandidat yang bersaing di seleksi turnamen. Lebih besar = seleksi lebih ketat."
+            >
+              Tournament Size <span class="param-hint">2–10</span>
+            </label>
+            <input
+              type="number"
+              id="ga-tournament"
+              min="2"
+              max="10"
+              value="3"
+              class="param-input param-input-blue"
+            />
+            <div class="param-desc">Ukuran seleksi turnamen</div>
+          </div>
+
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Batas bawah suhu AC yang boleh dipilih oleh GA (°C)."
+            >
+              Suhu Min AC (°C) <span class="param-hint">16–28</span>
+            </label>
+            <input
+              type="number"
+              id="ga-temp-min"
+              min="16"
+              max="28"
+              value="16"
+              class="param-input param-input-blue"
+            />
+            <div class="param-desc">Batas bawah suhu AC</div>
+          </div>
+
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Batas atas suhu AC yang boleh dipilih oleh GA (°C)."
+            >
+              Suhu Max AC (°C) <span class="param-hint">18–30</span>
+            </label>
+            <input
+              type="number"
+              id="ga-temp-max"
+              min="18"
+              max="30"
+              value="30"
+              class="param-input param-input-blue"
+            />
+            <div class="param-desc">Batas atas suhu AC</div>
+          </div>
+
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Batas minimum kecepatan kipas AC (1=Low, 3=High)."
+            >
+              Fan Min <span class="param-hint">1–3</span>
+            </label>
+            <input
+              type="number"
+              id="ga-fan-min"
+              min="1"
+              max="3"
+              value="1"
+              class="param-input param-input-blue"
+            />
+            <div class="param-desc">Kecepatan kipas minimum</div>
+          </div>
+
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Batas maksimum kecepatan kipas AC (1=Low, 3=High)."
+            >
+              Fan Max <span class="param-hint">1–3</span>
+            </label>
+            <input
+              type="number"
+              id="ga-fan-max"
+              min="1"
+              max="3"
+              value="3"
+              class="param-input param-input-blue"
+            />
+            <div class="param-desc">Kecepatan kipas maksimum</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PSO CARD ===== -->
+      <div
+        style="
+          background: rgba(14, 165, 233, 0.05);
+          border: 1px solid rgba(14, 165, 233, 0.25);
+          border-radius: 12px;
+          padding: 18px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+          "
+        >
+          <div style="display: flex; align-items: center; gap: 10px">
+            <div
+              style="
+                background: linear-gradient(135deg, #0ea5e9, #0891b2);
+                color: #fff;
+                font-size: 12px;
+                font-weight: 800;
+                padding: 4px 10px;
+                border-radius: 6px;
+                letter-spacing: 0.5px;
+              "
+            >
+              PSO
+            </div>
+            <span style="font-size: 15px; font-weight: 700; color: #e2e8f0"
+              >Particle Swarm Optimization</span
+            >
+          </div>
+          <button
+            onclick="resetPSODefaults()"
+            style="
+              padding: 5px 12px;
+              border-radius: 6px;
+              background: rgba(14, 165, 233, 0.12);
+              border: 1px solid rgba(14, 165, 233, 0.3);
+              color: #7dd3fc;
+              font-size: 11px;
+              font-weight: 600;
+              cursor: pointer;
+              transition: all 0.2s;
+            "
+            onmouseover="this.style.background = 'rgba(14,165,233,0.25)'"
+            onmouseout="this.style.background = 'rgba(14,165,233,0.12)'"
+          >
+            ↺ Reset Default
+          </button>
+        </div>
+
+        <!-- PSO params grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px">
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Jumlah partikel dalam kawanan PSO. Lebih banyak = eksplorasi lebih luas, tapi lebih lambat."
+            >
+              Partikel <span class="param-hint">5–200</span>
+            </label>
+            <input
+              type="number"
+              id="pso-n-particles"
+              min="5"
+              max="200"
+              value="10"
+              class="param-input param-input-cyan"
+            />
+            <div class="param-desc">Jumlah partikel dalam kawanan</div>
+          </div>
+
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Jumlah iterasi pergerakan partikel. Lebih banyak = konvergensi lebih akurat."
+            >
+              Iterasi <span class="param-hint">5–500</span>
+            </label>
+            <input
+              type="number"
+              id="pso-iterations"
+              min="5"
+              max="500"
+              value="20"
+              class="param-input param-input-cyan"
+            />
+            <div class="param-desc">Jumlah iterasi pergerakan</div>
+          </div>
+
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Inertia weight (w): mengontrol seberapa besar kecepatan sebelumnya memengaruhi gerakan. Tinggi = eksplorasi, rendah = eksploitasi."
+            >
+              W — Inersia <span class="param-hint">0.1–1.5</span>
+            </label>
+            <input
+              type="number"
+              id="pso-w"
+              min="0.1"
+              max="1.5"
+              step="0.05"
+              value="0.50"
+              class="param-input param-input-cyan"
+            />
+            <div class="param-desc">Bobot inersia kecepatan partikel</div>
+          </div>
+
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Cognitive coefficient (C1): bobot kepercayaan partikel terhadap posisi terbaiknya sendiri (personal best)."
+            >
+              C1 — Kognitif <span class="param-hint">0.5–4.0</span>
+            </label>
+            <input
+              type="number"
+              id="pso-c1"
+              min="0.5"
+              max="4.0"
+              step="0.1"
+              value="1.5"
+              class="param-input param-input-cyan"
+            />
+            <div class="param-desc">Kepercayaan terhadap personal best</div>
+          </div>
+
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Social coefficient (C2): bobot kepercayaan partikel terhadap posisi terbaik kelompok (global best)."
+            >
+              C2 — Sosial <span class="param-hint">0.5–4.0</span>
+            </label>
+            <input
+              type="number"
+              id="pso-c2"
+              min="0.5"
+              max="4.0"
+              step="0.1"
+              value="1.5"
+              class="param-input param-input-cyan"
+            />
+            <div class="param-desc">Kepercayaan terhadap global best</div>
+          </div>
+
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Brightness minimum yang boleh dipilih PSO (0 = mati total)."
+            >
+              Brightness Min <span class="param-hint">0–100</span>
+            </label>
+            <input
+              type="number"
+              id="pso-bright-min"
+              min="0"
+              max="100"
+              value="0"
+              class="param-input param-input-cyan"
+            />
+            <div class="param-desc">Batas bawah brightness lampu</div>
+          </div>
+
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Brightness maksimum yang boleh dipilih PSO (255 = terang penuh)."
+            >
+              Brightness Max <span class="param-hint">100–255</span>
+            </label>
+            <input
+              type="number"
+              id="pso-bright-max"
+              min="100"
+              max="255"
+              value="255"
+              class="param-input param-input-cyan"
+            />
+            <div class="param-desc">Batas atas brightness lampu</div>
+          </div>
+
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Target cahaya (lux) saat ada orang di ruangan (mode kerja/belajar). Standar: 350–500 lux."
+            >
+              Target Lux (Ada Orang) <span class="param-hint">100–1000</span>
+            </label>
+            <input
+              type="number"
+              id="pso-lux-work"
+              min="100"
+              max="1000"
+              value="350"
+              class="param-input param-input-cyan"
+            />
+            <div class="param-desc">Target lux saat ruangan terisi</div>
+          </div>
+
+          <div class="param-field">
+            <label
+              class="param-label"
+              title="Target cahaya (lux) saat ruangan kosong. Bisa 0 untuk matikan lampu sepenuhnya."
+            >
+              Target Lux (Kosong) <span class="param-hint">0–300</span>
+            </label>
+            <input
+              type="number"
+              id="pso-lux-sleep"
+              min="0"
+              max="300"
+              value="50"
+              class="param-input param-input-cyan"
+            />
+            <div class="param-desc">Target lux saat ruangan kosong</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /grid -->
+
+    <!-- Bottom info bar -->
+    <div
+      style="
+        margin: 0 20px 18px;
+        padding: 10px 14px;
+        border-radius: 8px;
+        background: rgba(148, 163, 184, 0.05);
+        border: 1px solid rgba(148, 163, 184, 0.1);
+        font-size: 11px;
+        color: #64748b;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      "
+    >
+      <span
+        >💡 <strong>Tip:</strong> Hover setiap label parameter untuk melihat
+        penjelasan detailnya.</span
+      >
+      <span
+        >⚡ Klik <strong>Apply & Save</strong> untuk langsung menerapkan
+        perubahan tanpa restart server.</span
+      >
+      <span>🔄 Parameter reset ke default saat server Flask di-restart.</span>
+    </div>
+  </div>
+
+  <!-- ===== INLINE STYLES FOR PARAM FIELDS ===== -->
+  <style>
+    .param-field {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .param-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: help;
+    }
+    .param-label:hover {
+      color: #e2e8f0;
+    }
+    .param-hint {
+      font-weight: 400;
+      color: #475569;
+      font-size: 10px;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .param-input {
+      padding: 7px 10px;
+      border-radius: 7px;
+      background: #0f172a;
+      color: #e2e8f0;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      outline: none;
+      transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .param-input-blue:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+    }
+    .param-input-cyan:focus {
+      border-color: #0ea5e9;
+      box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.15);
+    }
+    .param-desc {
+      font-size: 10px;
+      color: #475569;
+      margin-top: 1px;
+    }
+    @media (max-width: 768px) {
+      #algo-param-settings
+        .chart-container
+        > div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</div>
+
+<!-- ===== INLINE SCRIPT: Parameter functions — always available regardless of dashboard.js version ===== -->
+<script>
+  (function () {
+    var GA_DEFAULTS = {
+      population_size: 15,
+      generations: 20,
+      mutation_rate: 0.3,
+      crossover_rate: 0.85,
+      elitism_ratio: 0.2,
+      tournament_size: 3,
+      ac_temp_min: 16,
+      ac_temp_max: 30,
+      fan_min: 1,
+      fan_max: 3,
+    };
+    var PSO_DEFAULTS = {
+      swarm_size: 10,
+      iterations: 20,
+      w: 0.5,
+      c1: 1.5,
+      c2: 1.5,
+      brightness_min: 0,
+      brightness_max: 255,
+      target_lux_work: 350,
+      target_lux_sleep: 50,
+    };
+    var GA_MAP = {
+      population_size: "ga-pop-size",
+      generations: "ga-generations",
+      mutation_rate: "ga-mutation",
+      crossover_rate: "ga-crossover",
+      elitism_ratio: "ga-elitism",
+      tournament_size: "ga-tournament",
+      ac_temp_min: "ga-temp-min",
+      ac_temp_max: "ga-temp-max",
+      fan_min: "ga-fan-min",
+      fan_max: "ga-fan-max",
+    };
+    var PSO_MAP = {
+      swarm_size: "pso-n-particles",
+      iterations: "pso-iterations",
+      w: "pso-w",
+      c1: "pso-c1",
+      c2: "pso-c2",
+      brightness_min: "pso-bright-min",
+      brightness_max: "pso-bright-max",
+      target_lux_work: "pso-lux-work",
+      target_lux_sleep: "pso-lux-sleep",
+    };
+
+    function _setField(map, key, val) {
+      var el = document.getElementById(map[key]);
+      if (el && val !== undefined) el.value = val;
+    }
+    function _getField(map, key) {
+      var el = document.getElementById(map[key]);
+      return el ? parseFloat(el.value) : undefined;
+    }
+    function _toast(msg, type) {
+      if (typeof showToast === "function") showToast(msg, type || "info");
+    }
+
+    window.loadMLParams = function () {
+      fetch("/api/ml/params")
+        .then(function (r) {
+          return r.json();
+        })
+        .then(function (d) {
+          if (d.status !== "success") return;
+          var ga = d.ga || {},
+            pso = d.pso || {};
+          Object.keys(GA_MAP).forEach(function (k) {
+            _setField(GA_MAP, k, ga[k]);
+          });
+          Object.keys(PSO_MAP).forEach(function (k) {
+            _setField(PSO_MAP, k, pso[k]);
+          });
+        })
+        .catch(function (e) {
+          console.warn("[PARAMS] loadMLParams:", e);
+        });
+    };
+
+    window.saveMLParams = function () {
+      var statusEl = document.getElementById("param-save-status");
+      var btnEl = document.getElementById("btn-save-params");
+      if (statusEl) {
+        statusEl.textContent = "⏳ Menyimpan...";
+        statusEl.style.color = "#f59e0b";
+        statusEl.style.opacity = "1";
+      }
+      if (btnEl) {
+        btnEl.disabled = true;
+        btnEl.style.opacity = "0.6";
+      }
+
+      var ga = {},
+        pso = {};
+      Object.keys(GA_MAP).forEach(function (k) {
+        ga[k] = _getField(GA_MAP, k);
+      });
+      Object.keys(PSO_MAP).forEach(function (k) {
+        pso[k] = _getField(PSO_MAP, k);
+      });
+
+      fetch("/api/ml/params", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ga: ga, pso: pso }),
+      })
+        .then(function (r) {
+          return r.json();
+        })
+        .then(function (d) {
+          if (d.status === "success") {
+            if (statusEl) {
+              statusEl.textContent = "✓ Parameter tersimpan!";
+              statusEl.style.color = "#10b981";
+            }
+            _toast("Parameter GA & PSO berhasil disimpan", "success");
+            if (d.ga)
+              Object.keys(GA_MAP).forEach(function (k) {
+                _setField(GA_MAP, k, d.ga[k]);
+              });
+            if (d.pso)
+              Object.keys(PSO_MAP).forEach(function (k) {
+                _setField(PSO_MAP, k, d.pso[k]);
+              });
+          } else {
+            var errs = (d.errors || [d.message || "Error"]).join(", ");
+            if (statusEl) {
+              statusEl.textContent = "⚠ " + errs;
+              statusEl.style.color = "#ef4444";
+            }
+            _toast("Error: " + errs, "error");
+          }
+        })
+        .catch(function (e) {
+          if (statusEl) {
+            statusEl.textContent = "⚠ Gagal terhubung ke server";
+            statusEl.style.color = "#ef4444";
+          }
+          _toast("Gagal menyimpan (network error)", "error");
+        })
+        .finally(function () {
+          if (btnEl) {
+            btnEl.disabled = false;
+            btnEl.style.opacity = "1";
+          }
+          setTimeout(function () {
+            if (statusEl) statusEl.style.opacity = "0";
+          }, 3500);
+        });
+    };
+
+    window.resetGADefaults = function () {
+      Object.keys(GA_MAP).forEach(function (k) {
+        _setField(GA_MAP, k, GA_DEFAULTS[k]);
+      });
+      _toast("Parameter GA direset ke default", "info");
+    };
+
+    window.resetPSODefaults = function () {
+      Object.keys(PSO_MAP).forEach(function (k) {
+        _setField(PSO_MAP, k, PSO_DEFAULTS[k]);
+      });
+      _toast("Parameter PSO direset ke default", "info");
+    };
+
+    // Auto-load params when this page is rendered
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", window.loadMLParams);
+    } else {
+      setTimeout(window.loadMLParams, 200);
+    }
+  })();
+</script>

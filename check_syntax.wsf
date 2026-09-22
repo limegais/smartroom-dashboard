@@ -1,0 +1,21 @@
+<job>
+<script language="JScript">
+try {
+    var stream = new ActiveXObject("ADODB.Stream");
+    stream.Type = 2; // text
+    stream.Charset = "utf-8";
+    stream.Open();
+    stream.LoadFromFile("dashboard/static/js/dashboard.js");
+    var code = stream.ReadText(-1);
+    stream.Close();
+
+    // Use Function constructor to check syntax
+    var testFn = new Function(code);
+    WScript.Echo("SYNTAX OK!");
+} catch(e) {
+    WScript.Echo("SYNTAX ERROR: " + e.message);
+    WScript.Echo("Number: " + (e.number & 0xFFFF));
+    WScript.Echo("Description: " + e.description);
+}
+</script>
+</job>

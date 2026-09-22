@@ -1,0 +1,374 @@
+<div id="esp32-ota" class="page">
+    <div class="header">
+        <h1>&#x26A1; ESP32 OTA Update</h1>
+        <p>Upload firmware baru ke ESP32 SmartRoom AC Controller via WiFi</p>
+    </div>
+
+    <!-- STATUS CARDS -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-bottom:24px;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center;">
+            <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Status ESP32</div>
+            <div id="ota-esp-status" style="font-size:16px;font-weight:800;color:#64748b;">&#x25CF; UNKNOWN</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center;">
+            <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">IP Address</div>
+            <div id="ota-esp-ip" style="font-size:13px;font-weight:700;color:#38bdf8;font-family:monospace;">—</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center;">
+            <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Free Heap</div>
+            <div id="ota-heap" style="font-size:18px;font-weight:800;color:#a78bfa;">—</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center;">
+            <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">RSSI WiFi</div>
+            <div id="ota-rssi" style="font-size:18px;font-weight:800;color:#f59e0b;">—</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center;">
+            <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Uptime</div>
+            <div id="ota-uptime" style="font-size:13px;font-weight:700;color:#34d399;">—</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center;">
+            <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Flash Tersedia</div>
+            <div id="ota-free-sketch" style="font-size:13px;font-weight:700;color:#60a5fa;">—</div>
+        </div>
+    </div>
+
+    <!-- IP CONFIG + FETCH STATUS -->
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:20px;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-secondary);margin-bottom:14px;">
+            &#x1F4E1; Konfigurasi Target ESP32
+        </div>
+        <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;">
+            <div style="flex:1;min-width:200px;">
+                <label style="font-size:12px;color:var(--text-secondary);display:block;margin-bottom:6px;">IP Address ESP32</label>
+                <input id="ota-ip-input" type="text" placeholder="contoh: 192.168.1.105"
+                    style="width:100%;padding:12px 14px;background:#0f172a;border:1px solid var(--border);border-radius:10px;color:var(--text-primary);font-size:14px;font-family:monospace;box-sizing:border-box;"
+                    oninput="otaIpChanged()">
+            </div>
+            <button onclick="otaFetchStatus()" id="ota-btn-fetch"
+                style="padding:12px 20px;background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;transition:opacity 0.2s;">
+                &#x1F504; Cek Status
+            </button>
+        </div>
+        <div id="ota-status-msg" style="margin-top:10px;font-size:13px;color:var(--text-secondary);min-height:20px;"></div>
+        <div id="ota-direct-link" style="margin-top:8px;display:none;">
+            <a id="ota-direct-href" href="#" target="_blank"
+                style="font-size:13px;color:#38bdf8;text-decoration:none;">
+                &#x1F310; Buka halaman OTA ESP32 langsung di browser &#x2197;
+            </a>
+        </div>
+    </div>
+
+    <!-- UPLOAD PANEL -->
+    <div style="background:var(--bg-card);border:2px solid var(--border);border-radius:16px;padding:24px;margin-bottom:20px;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-secondary);margin-bottom:16px;">
+            &#x1F680; Upload Firmware (.bin)
+        </div>
+
+        <!-- Drop zone -->
+        <div id="ota-dropzone"
+            onclick="document.getElementById('ota-file-input').click()"
+            ondragover="otaDragOver(event)" ondragleave="otaDragLeave(event)" ondrop="otaDrop(event)"
+            style="border:2px dashed #334155;border-radius:14px;padding:36px 20px;text-align:center;cursor:pointer;transition:all 0.25s;margin-bottom:16px;">
+            <div style="font-size:36px;margin-bottom:10px;">&#x1F4E6;</div>
+            <div style="font-size:15px;font-weight:600;color:var(--text-primary);margin-bottom:6px;">Drag &amp; drop atau klik untuk pilih file</div>
+            <div style="font-size:13px;color:var(--text-secondary);">Format: <strong>.bin</strong> — Compiled ESP32 firmware dari Arduino IDE</div>
+        </div>
+        <input type="file" id="ota-file-input" accept=".bin" style="display:none" onchange="otaFileSelected(this)">
+
+        <!-- File info -->
+        <div id="ota-file-info" style="display:none;background:#0f172a;border-radius:10px;padding:14px;margin-bottom:16px;border:1px solid #334155;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                    <div id="ota-fname" style="font-size:14px;font-weight:700;color:var(--text-primary);font-family:monospace;"></div>
+                    <div id="ota-fsize" style="font-size:12px;color:var(--text-secondary);margin-top:4px;"></div>
+                </div>
+                <button onclick="otaClearFile()" style="background:none;border:none;color:#ef4444;cursor:pointer;font-size:20px;padding:4px;">&#x2715;</button>
+            </div>
+        </div>
+
+        <!-- Progress bar -->
+        <div id="ota-progress-wrap" style="display:none;margin-bottom:16px;">
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--text-secondary);margin-bottom:8px;">
+                <span id="ota-prog-label">Uploading via Flask proxy...</span>
+                <span id="ota-pct">0%</span>
+            </div>
+            <div style="background:#1e293b;border-radius:99px;height:10px;overflow:hidden;border:1px solid var(--border);">
+                <div id="ota-bar" style="height:100%;width:0%;background:linear-gradient(90deg,#6366f1,#06b6d4);border-radius:99px;transition:width 0.3s;"></div>
+            </div>
+        </div>
+
+        <!-- Result -->
+        <div id="ota-result" style="display:none;padding:14px;border-radius:10px;font-size:14px;margin-bottom:16px;"></div>
+
+        <!-- Upload button -->
+        <button id="ota-upload-btn" onclick="otaUpload()" disabled
+            style="width:100%;padding:16px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:not-allowed;transition:all 0.3s;opacity:0.4;">
+            &#x26A1; Upload Firmware ke ESP32
+        </button>
+        <div style="font-size:12px;color:var(--text-secondary);text-align:center;margin-top:10px;">
+            &#x26A0;&#xFE0F; ESP32 akan restart otomatis setelah upload berhasil. AC tidak aktif sementara.
+        </div>
+    </div>
+
+    <!-- LOG -->
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+            <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-secondary);">&#x1F4CB; OTA Log</div>
+            <button onclick="otaClearLog()" style="font-size:12px;color:var(--text-secondary);background:none;border:none;cursor:pointer;padding:4px 8px;">Clear</button>
+        </div>
+        <div id="ota-log" style="background:#0f172a;border-radius:10px;padding:14px;font-family:monospace;font-size:12px;color:#94a3b8;max-height:220px;overflow-y:auto;line-height:1.8;">
+            <span style="color:#475569;">— Belum ada aktivitas —</span>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    let _otaFile = null;
+    let _otaIp   = '';
+
+    function otaLog(msg, level) {
+        level = level || 'info';
+        const colors = { info:'#94a3b8', success:'#10b981', error:'#ef4444', warn:'#f59e0b' };
+        const icons  = { info:'i', success:'OK', error:'ERR', warn:'!' };
+        const el = document.getElementById('ota-log');
+        if (!el) return;
+        const now = new Date().toLocaleTimeString();
+        if (el.innerHTML.includes('Belum ada aktivitas')) el.innerHTML = '';
+        el.innerHTML += '<div style="color:'+colors[level]+'">['+now+'] ['+icons[level]+'] '+msg+'</div>';
+        el.scrollTop = el.scrollHeight;
+    }
+    window.otaClearLog = function() {
+        var el = document.getElementById('ota-log');
+        if (el) el.innerHTML = '<span style="color:#475569;">— Log dikosongkan —</span>';
+    };
+
+    window.otaIpChanged = function() {
+        _otaIp = (document.getElementById('ota-ip-input') || {}).value || '';
+        _otaIp = _otaIp.trim();
+        var ld = document.getElementById('ota-direct-link');
+        var la = document.getElementById('ota-direct-href');
+        if (_otaIp && ld && la) {
+            la.href = 'http://' + _otaIp;
+            ld.style.display = 'block';
+        } else if (ld) {
+            ld.style.display = 'none';
+        }
+        _updateBtn();
+    };
+
+    function _updateBtn() {
+        var btn = document.getElementById('ota-upload-btn');
+        if (!btn) return;
+        var ok = !!(_otaFile && _otaIp);
+        btn.disabled = !ok;
+        btn.style.opacity = ok ? '1' : '0.4';
+        btn.style.cursor  = ok ? 'pointer' : 'not-allowed';
+    }
+
+    window.otaFetchStatus = function() {
+        var ip = (document.getElementById('ota-ip-input') || {}).value || '';
+        ip = ip.trim();
+        if (!ip) { otaLog('Masukkan IP ESP32 terlebih dahulu', 'warn'); return; }
+        var btn = document.getElementById('ota-btn-fetch');
+        var msg = document.getElementById('ota-status-msg');
+        if (btn) { btn.disabled = true; btn.textContent = 'Mencek...'; }
+        if (msg) { msg.style.color = '#94a3b8'; msg.textContent = 'Menghubungi ESP32...'; }
+        otaLog('Cek status ESP32 @ ' + ip, 'info');
+
+        fetch('/api/esp32-ota/status?ip=' + encodeURIComponent(ip))
+        .then(function(r){ return r.json(); })
+        .then(function(data) {
+            if (data.error) throw new Error(data.error);
+            var st = document.getElementById('ota-esp-status');
+            if (st) { st.textContent = '● ONLINE'; st.style.color = '#10b981'; }
+            var ipEl = document.getElementById('ota-esp-ip');
+            if (ipEl) ipEl.textContent = data.ip || ip;
+            var hp = document.getElementById('ota-heap');
+            if (hp) hp.textContent = data.free_heap ? Math.round(data.free_heap/1024) + ' KB' : '—';
+            var rs = document.getElementById('ota-rssi');
+            if (rs) rs.textContent = data.rssi ? data.rssi + ' dBm' : '—';
+            var up = data.uptime_s || 0;
+            var upEl = document.getElementById('ota-uptime');
+            if (upEl) upEl.textContent = Math.floor(up/3600)+'h '+Math.floor((up%3600)/60)+'m '+(up%60)+'s';
+            var fs = document.getElementById('ota-free-sketch');
+            if (fs) fs.textContent = data.free_sketch ? Math.round(data.free_sketch/1024) + ' KB' : '—';
+            if (msg) { msg.style.color = '#10b981'; msg.textContent = 'ESP32 online: ' + (data.hostname||'esp32') + ' | AC: ' + (data.ac_state||'?') + ' ' + (data.ac_temp||'?') + 'C | MQTT: ' + (data.mqtt_ok ? 'OK' : 'OFFLINE'); }
+            otaLog('ONLINE — Heap:' + Math.round((data.free_heap||0)/1024) + 'KB RSSI:' + data.rssi + 'dBm', 'success');
+            _otaIp = ip;
+            _updateBtn();
+        })
+        .catch(function(e) {
+            var st = document.getElementById('ota-esp-status');
+            if (st) { st.textContent = '● OFFLINE'; st.style.color = '#ef4444'; }
+            if (msg) { msg.style.color = '#ef4444'; msg.textContent = 'Tidak dapat menghubungi: ' + e.message; }
+            otaLog('Gagal: ' + e.message, 'error');
+        })
+        .finally(function() {
+            if (btn) { btn.disabled = false; btn.textContent = '\u{1F504} Cek Status'; }
+        });
+    };
+
+    window.otaFileSelected = function(input) {
+        var f = input.files && input.files[0];
+        if (!f) return;
+        _otaFile = f;
+        var fi = document.getElementById('ota-file-info');
+        if (fi) fi.style.display = 'block';
+        var fn = document.getElementById('ota-fname');
+        if (fn) fn.textContent = f.name;
+        var fs = document.getElementById('ota-fsize');
+        if (fs) fs.textContent = (f.size/1024).toFixed(1) + ' KB (' + (f.size/1024/1024).toFixed(2) + ' MB)';
+        var dz = document.getElementById('ota-dropzone');
+        if (dz) dz.style.borderColor = '#6366f1';
+        otaLog('File dipilih: ' + f.name + ' (' + (f.size/1024).toFixed(1) + ' KB)', 'info');
+        _updateBtn();
+    };
+
+    window.otaClearFile = function() {
+        _otaFile = null;
+        var fi = document.getElementById('ota-file-input');
+        if (fi) fi.value = '';
+        var info = document.getElementById('ota-file-info');
+        if (info) info.style.display = 'none';
+        var dz = document.getElementById('ota-dropzone');
+        if (dz) dz.style.borderColor = '#334155';
+        _updateBtn();
+    };
+
+    window.otaDragOver = function(e) {
+        e.preventDefault();
+        var dz = document.getElementById('ota-dropzone');
+        if (dz) { dz.style.borderColor='#6366f1'; dz.style.background='rgba(99,102,241,0.05)'; }
+    };
+    window.otaDragLeave = function(e) {
+        var dz = document.getElementById('ota-dropzone');
+        if (dz) { dz.style.borderColor='#334155'; dz.style.background=''; }
+    };
+    window.otaDrop = function(e) {
+        e.preventDefault();
+        window.otaDragLeave(e);
+        var f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+        if (f && f.name.endsWith('.bin')) {
+            _otaFile = f;
+            var fi = document.getElementById('ota-file-info');
+            if (fi) fi.style.display = 'block';
+            var fn = document.getElementById('ota-fname');
+            if (fn) fn.textContent = f.name;
+            var fs = document.getElementById('ota-fsize');
+            if (fs) fs.textContent = (f.size/1024).toFixed(1) + ' KB';
+            var dz = document.getElementById('ota-dropzone');
+            if (dz) dz.style.borderColor = '#6366f1';
+            otaLog('Drop: ' + f.name, 'info');
+            _updateBtn();
+        } else {
+            otaLog('File harus berformat .bin!', 'error');
+        }
+    };
+
+    window.otaUpload = function() {
+        if (!_otaFile || !_otaIp) { otaLog('IP dan file .bin harus diisi!', 'warn'); return; }
+        var btn  = document.getElementById('ota-upload-btn');
+        var pw   = document.getElementById('ota-progress-wrap');
+        var bar  = document.getElementById('ota-bar');
+        var pct  = document.getElementById('ota-pct');
+        var res  = document.getElementById('ota-result');
+        var plbl = document.getElementById('ota-prog-label');
+        if (btn) { btn.disabled = true; btn.textContent = 'Uploading...'; }
+        if (pw) pw.style.display = 'block';
+        if (res) res.style.display = 'none';
+        if (bar) { bar.style.width = '0%'; bar.style.background = 'linear-gradient(90deg,#6366f1,#06b6d4)'; }
+        otaLog('Mulai upload ' + _otaFile.name + ' ke ' + _otaIp, 'info');
+        var fd = new FormData();
+        fd.append('firmware', _otaFile, _otaFile.name);
+        fd.append('esp32_ip', _otaIp);
+        var xhr = new XMLHttpRequest();
+        xhr.upload.onprogress = function(e) {
+            if (e.lengthComputable) {
+                var p = Math.round(e.loaded / e.total * 100);
+                if (bar) bar.style.width = p + '%';
+                if (pct) pct.textContent = p + '%';
+                if (plbl) plbl.textContent = 'Mengirim ke Flask server... ' + p + '%';
+            }
+        };
+        xhr.onload = function() {
+            try {
+                var data = JSON.parse(xhr.responseText);
+                if (res) res.style.display = 'block';
+                if (data.status === 'success') {
+                    if (plbl) plbl.textContent = 'Flashing ESP32...';
+                    if (pct) pct.textContent = '100%';
+                    if (bar) { bar.style.width='100%'; bar.style.background='linear-gradient(90deg,#10b981,#34d399)'; }
+                    if (res) {
+                        res.style.background = 'rgba(16,185,129,0.1)';
+                        res.style.color = '#10b981';
+                        res.style.border = '1px solid #10b981';
+                        res.innerHTML = '<strong>Upload Berhasil!</strong> ESP32 sedang restart. Tunggu ~10 detik...';
+                    }
+                    otaLog('BERHASIL! ESP32 restart...', 'success');
+                    setTimeout(function() {
+                        if (btn) { btn.textContent = 'Cek Status...'; }
+                        window.otaFetchStatus();
+                    }, 10000);
+                    setTimeout(function() {
+                        if (btn) { btn.disabled = false; btn.textContent = 'Upload Firmware ke ESP32'; }
+                        _updateBtn();
+                    }, 12000);
+                } else {
+                    throw new Error(data.error || data.response || 'Unknown error');
+                }
+            } catch(e2) {
+                if (res) {
+                    res.style.display = 'block';
+                    res.style.background = 'rgba(239,68,68,0.1)';
+                    res.style.color = '#ef4444';
+                    res.style.border = '1px solid #ef4444';
+                    res.textContent = 'Gagal: ' + e2.message;
+                }
+                otaLog('GAGAL: ' + e2.message, 'error');
+                if (btn) { btn.disabled = false; btn.textContent = 'Upload Firmware ke ESP32'; }
+                _updateBtn();
+            }
+        };
+        xhr.onerror = function() {
+            if (res) {
+                res.style.display = 'block';
+                res.style.background = 'rgba(239,68,68,0.1)';
+                res.style.color = '#ef4444';
+                res.style.border = '1px solid #ef4444';
+                res.textContent = 'Koneksi error ke server Flask!';
+            }
+            otaLog('Koneksi error!', 'error');
+            if (btn) { btn.disabled = false; btn.textContent = 'Upload Firmware ke ESP32'; }
+            _updateBtn();
+        };
+        xhr.open('POST', '/api/esp32-ota/upload');
+        xhr.send(fd);
+    };
+
+    // Auto-init: ambil IP ESP32 dari server
+    function _otaInit() {
+        fetch('/api/esp32-ota/known-ip')
+        .then(function(r){ return r.json(); })
+        .then(function(d) {
+            if (d && d.ip) {
+                var inp = document.getElementById('ota-ip-input');
+                if (inp) inp.value = d.ip;
+                _otaIp = d.ip;
+                var ld = document.getElementById('ota-direct-link');
+                var la = document.getElementById('ota-direct-href');
+                if (ld) ld.style.display = 'block';
+                if (la) la.href = 'http://' + d.ip;
+                otaLog('IP ESP32 terdeteksi dari MQTT: ' + d.ip, 'success');
+                window.otaFetchStatus();
+            } else {
+                otaLog('IP ESP32 belum diketahui. Masukkan IP secara manual.', 'warn');
+            }
+        })
+        .catch(function() {
+            otaLog('Masukkan IP ESP32 secara manual.', 'warn');
+        });
+    }
+    _otaInit();
+})();
+</script>

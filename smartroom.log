@@ -1,0 +1,1138 @@
+2026-02-23 13:47:52,008 [SmartRoom] INFO: Initializing Smart Room Controller...
+2026-02-23 13:47:52,013 [SmartRoom] INFO: Smart Room Controller initialized!
+2026-02-23 13:47:52,016 [SmartRoom] INFO: [1/5] Starting MQTT Client...
+2026-02-23 13:47:52,019 [SmartRoom] INFO:    ✅ MQTT client started
+2026-02-23 13:47:52,020 [SmartRoom] INFO: ✅ Connected to MQTT broker
+2026-02-23 13:47:52,020 [SmartRoom] INFO:    Subscribed: smartroom/ac/sensors
+2026-02-23 13:47:52,020 [SmartRoom] INFO:    Subscribed: smartroom/lamp/sensors
+2026-02-23 13:47:52,021 [SmartRoom] INFO:    Subscribed: smartroom/camera/detection
+2026-02-23 13:47:52,021 [SmartRoom] INFO:    Subscribed: smartroom/ac/status
+2026-02-23 13:47:52,021 [SmartRoom] INFO:    Subscribed: smartroom/lamp/status
+2026-02-23 13:47:52,021 [SmartRoom] INFO:    Subscribed: smartroom/ac/ir_learned
+2026-02-23 13:47:52,021 [SmartRoom] INFO:    Subscribed: smartroom/dashboard/command
+2026-02-23 13:47:54,020 [SmartRoom] INFO: [2/5] Starting Data Collector...
+2026-02-23 13:47:54,021 [DataCollector] INFO: DataCollector started
+2026-02-23 13:47:54,021 [DataCollector] INFO: DataCollector connected (rc=0)
+2026-02-23 13:47:54,022 [SmartRoom] INFO:    ✅ Data Collector started
+2026-02-23 13:47:54,022 [SmartRoom] INFO: [3/5] Starting Person Detector...
+2026-02-23 13:47:54,022 [PersonDetector] ERROR: ultralytics or opencv not installed!
+2026-02-23 13:47:54,022 [SmartRoom] WARNING:    ⚠️  Camera failed
+2026-02-23 13:47:54,023 [SmartRoom] INFO: [4/5] Starting Optimization Loop...
+2026-02-23 13:47:54,023 [SmartRoom] INFO: Optimization loop started (interval=30s)
+2026-02-23 13:47:54,023 [SmartRoom] INFO:    ✅ Optimization loop started
+2026-02-23 13:47:54,023 [SmartRoom] INFO: [5/5] System Ready!
+2026-02-23 13:47:54,023 [SmartRoom] INFO: 🚀 All services started! Press Ctrl+C to stop.
+2026-02-23 13:47:54,023 [SmartRoom] INFO: 📊 Algorithm mode: BOTH
+2026-02-23 13:47:55,742 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 75.7}
+2026-02-23 13:48:04,023 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:48:05,814 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 75.7}
+2026-02-23 13:48:15,729 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 75.5}
+2026-02-23 13:48:25,692 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 75.5}
+2026-02-23 13:48:34,024 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:48:35,839 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 75.4}
+2026-02-23 13:48:45,695 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 75.5}
+2026-02-23 13:48:54,052 [SmartRoom] INFO: STATUS | AC: 25.9°C 75.6% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 13:48:55,689 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 75.6}
+2026-02-23 13:49:04,026 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:49:05,855 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 75.7}
+2026-02-23 13:49:15,697 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 76}
+2026-02-23 13:49:30,191 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.8}
+2026-02-23 13:49:34,026 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:49:41,684 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 75.6}
+2026-02-23 13:49:45,694 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 75.3}
+2026-02-23 13:49:54,076 [SmartRoom] INFO: STATUS | AC: 25.9°C 75.3% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 13:49:55,691 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 75.3}
+2026-02-23 13:50:04,027 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:50:05,839 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.3}
+2026-02-23 13:50:26,293 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 75.3}
+2026-02-23 13:50:26,295 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 75.2}
+2026-02-23 13:50:34,027 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:50:41,259 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.2}
+2026-02-23 13:50:45,766 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.2}
+2026-02-23 13:50:54,119 [SmartRoom] INFO: STATUS | AC: 25.9°C 75.2% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 13:50:55,698 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 75.2}
+2026-02-23 13:51:04,027 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:51:07,183 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75}
+2026-02-23 13:51:15,737 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 74.9}
+2026-02-23 13:51:25,704 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75}
+2026-02-23 13:51:34,028 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:51:35,698 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.1}
+2026-02-23 13:51:47,362 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.1}
+2026-02-23 13:51:54,158 [SmartRoom] INFO: STATUS | AC: 26.0°C 75.1% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 13:52:04,028 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:52:06,209 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.2}
+2026-02-23 13:52:06,210 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.4}
+2026-02-23 13:52:15,695 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.4}
+2026-02-23 13:52:25,780 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.4}
+2026-02-23 13:52:34,028 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:52:54,174 [SmartRoom] INFO: STATUS | AC: 26.0°C 75.3% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 13:52:55,697 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.3}
+2026-02-23 13:53:04,029 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:53:05,760 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.1}
+2026-02-23 13:53:15,701 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.3}
+2026-02-23 13:53:25,701 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.4}
+2026-02-23 13:53:34,029 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:53:35,866 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.4}
+2026-02-23 13:53:45,703 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.6}
+2026-02-23 13:53:54,189 [SmartRoom] INFO: STATUS | AC: 26.0°C 75.5% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 13:53:55,717 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.4}
+2026-02-23 13:54:04,030 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:54:05,884 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.2}
+2026-02-23 13:54:15,722 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.1}
+2026-02-23 13:54:25,700 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.3}
+2026-02-23 13:54:34,030 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:54:35,869 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.3}
+2026-02-23 13:54:45,711 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.2}
+2026-02-23 13:54:54,213 [SmartRoom] INFO: STATUS | AC: 26.0°C 75.2% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 13:54:55,711 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.2}
+2026-02-23 13:55:04,031 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:55:05,783 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.2}
+2026-02-23 13:55:15,704 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.2}
+2026-02-23 13:55:25,711 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.2}
+2026-02-23 13:55:34,031 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:55:35,869 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.2}
+2026-02-23 13:55:45,715 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.3}
+2026-02-23 13:55:54,230 [SmartRoom] INFO: STATUS | AC: 26.0°C 75.4% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 13:55:57,268 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.4}
+2026-02-23 13:56:04,032 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:56:05,920 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.3}
+2026-02-23 13:56:15,714 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.4}
+2026-02-23 13:56:31,377 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.4}
+2026-02-23 13:56:34,032 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:56:35,756 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.2}
+2026-02-23 13:56:45,720 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.3}
+2026-02-23 13:56:54,255 [SmartRoom] INFO: STATUS | AC: 26.0°C 75.3% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 13:56:55,712 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.3}
+2026-02-23 13:57:04,033 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:57:05,773 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.2}
+2026-02-23 13:57:17,210 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.3}
+2026-02-23 13:57:25,713 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.2}
+2026-02-23 13:57:34,033 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:57:36,814 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75.1}
+2026-02-23 13:57:45,722 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75}
+2026-02-23 13:57:54,287 [SmartRoom] INFO: STATUS | AC: 26.0°C 74.9% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 13:57:55,715 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 74.9}
+2026-02-23 13:58:04,034 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:58:05,898 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 75}
+2026-02-23 13:58:15,722 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 74.9}
+2026-02-23 13:58:25,714 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 74.7}
+2026-02-23 13:58:34,034 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:58:35,712 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 74.7}
+2026-02-23 13:58:45,753 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 74.6}
+2026-02-23 13:58:54,324 [SmartRoom] INFO: STATUS | AC: 26.1°C 74.9% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 13:58:55,856 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 75}
+2026-02-23 13:59:04,035 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:59:05,729 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 75.1}
+2026-02-23 13:59:15,721 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 74.5}
+2026-02-23 13:59:25,866 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 74.3}
+2026-02-23 13:59:34,035 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 13:59:35,730 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 74.1}
+2026-02-23 13:59:45,830 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 74}
+2026-02-23 13:59:54,361 [SmartRoom] INFO: STATUS | AC: 26.1°C 74.3% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 13:59:55,868 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 74.3}
+2026-02-23 14:00:04,036 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:00:05,712 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 74.2}
+2026-02-23 14:00:34,036 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:00:34,811 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 74.2}
+2026-02-23 14:00:34,811 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 74.2}
+2026-02-23 14:00:35,934 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 73.9}
+2026-02-23 14:00:47,722 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 73.8}
+2026-02-23 14:00:54,383 [SmartRoom] INFO: STATUS | AC: 26.1°C 73.8% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:00:54,753 [SmartRoom] INFO: Shutting down...
+2026-02-23 14:00:54,754 [SmartRoom] INFO: MQTT disconnected cleanly
+2026-02-23 14:00:54,756 [SmartRoom] INFO: Goodbye!
+2026-02-23 14:00:58,808 [SmartRoom] INFO: Initializing Smart Room Controller...
+2026-02-23 14:00:58,809 [SmartRoom] INFO: Smart Room Controller initialized!
+2026-02-23 14:00:58,810 [SmartRoom] INFO: [1/5] Starting MQTT Client...
+2026-02-23 14:00:58,813 [SmartRoom] INFO:    ✅ MQTT client started
+2026-02-23 14:00:58,813 [SmartRoom] INFO: ✅ Connected to MQTT broker
+2026-02-23 14:00:58,813 [SmartRoom] INFO:    Subscribed: smartroom/ac/sensors
+2026-02-23 14:00:58,813 [SmartRoom] INFO:    Subscribed: smartroom/lamp/sensors
+2026-02-23 14:00:58,814 [SmartRoom] INFO:    Subscribed: smartroom/camera/detection
+2026-02-23 14:00:58,814 [SmartRoom] INFO:    Subscribed: smartroom/ac/status
+2026-02-23 14:00:58,814 [SmartRoom] INFO:    Subscribed: smartroom/lamp/status
+2026-02-23 14:00:58,814 [SmartRoom] INFO:    Subscribed: smartroom/ac/ir_learned
+2026-02-23 14:00:58,814 [SmartRoom] INFO:    Subscribed: smartroom/dashboard/command
+2026-02-23 14:00:58,873 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 73.6}
+2026-02-23 14:01:00,813 [SmartRoom] INFO: [2/5] Starting Data Collector...
+2026-02-23 14:01:00,814 [DataCollector] INFO: DataCollector connected (rc=0)
+2026-02-23 14:01:00,815 [DataCollector] INFO: DataCollector started
+2026-02-23 14:01:00,815 [SmartRoom] INFO:    ✅ Data Collector started
+2026-02-23 14:01:00,815 [SmartRoom] INFO: [3/5] Starting Person Detector...
+2026-02-23 14:01:00,815 [PersonDetector] ERROR: ultralytics or opencv not installed!
+2026-02-23 14:01:00,815 [SmartRoom] WARNING:    ⚠️  Camera failed
+2026-02-23 14:01:00,815 [SmartRoom] INFO: [4/5] Starting Optimization Loop...
+2026-02-23 14:01:00,816 [SmartRoom] INFO: Optimization loop started (interval=30s)
+2026-02-23 14:01:00,816 [SmartRoom] INFO:    ✅ Optimization loop started
+2026-02-23 14:01:00,816 [SmartRoom] INFO: [5/5] System Ready!
+2026-02-23 14:01:00,816 [SmartRoom] INFO: 🚀 All services started! Press Ctrl+C to stop.
+2026-02-23 14:01:00,817 [SmartRoom] INFO: 📊 Algorithm mode: BOTH
+2026-02-23 14:01:05,862 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 73.5}
+2026-02-23 14:01:10,816 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:01:15,739 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 73.4}
+2026-02-23 14:01:25,885 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 73.4}
+2026-02-23 14:01:35,755 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 73.5}
+2026-02-23 14:01:40,818 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:01:45,729 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 73.3}
+2026-02-23 14:01:55,889 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 73.3}
+2026-02-23 14:02:00,837 [SmartRoom] INFO: STATUS | AC: 26.1°C 73.3% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:02:05,752 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 73.2}
+2026-02-23 14:02:10,818 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:02:17,829 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 73}
+2026-02-23 14:02:26,064 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26.1, 'humidity': 72.9}
+2026-02-23 14:02:40,819 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:03:00,882 [SmartRoom] INFO: STATUS | AC: 26.1°C 72.9% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:03:10,822 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:03:40,827 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:04:00,932 [SmartRoom] INFO: STATUS | AC: 26.1°C 72.9% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:04:10,827 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:04:40,223 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 72.5}
+2026-02-23 14:04:40,835 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:04:45,743 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 72.3}
+2026-02-23 14:04:55,939 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 72.6}
+2026-02-23 14:05:00,982 [SmartRoom] INFO: STATUS | AC: 26.0°C 72.6% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:05:05,772 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 72.5}
+2026-02-23 14:05:10,837 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:05:15,785 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 72.3}
+2026-02-23 14:05:25,909 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 72}
+2026-02-23 14:05:35,299 [SmartRoom] INFO: Initializing Smart Room Controller...
+2026-02-23 14:05:35,303 [SmartRoom] INFO: Smart Room Controller initialized!
+2026-02-23 14:05:35,306 [SmartRoom] INFO: [1/5] Starting MQTT Client...
+2026-02-23 14:05:35,310 [SmartRoom] INFO:    ✅ MQTT client started
+2026-02-23 14:05:35,311 [SmartRoom] INFO: ✅ Connected to MQTT broker
+2026-02-23 14:05:35,311 [SmartRoom] INFO:    Subscribed: smartroom/ac/sensors
+2026-02-23 14:05:35,311 [SmartRoom] INFO:    Subscribed: smartroom/lamp/sensors
+2026-02-23 14:05:35,311 [SmartRoom] INFO:    Subscribed: smartroom/camera/detection
+2026-02-23 14:05:35,312 [SmartRoom] INFO:    Subscribed: smartroom/ac/status
+2026-02-23 14:05:35,312 [SmartRoom] INFO:    Subscribed: smartroom/lamp/status
+2026-02-23 14:05:35,312 [SmartRoom] INFO:    Subscribed: smartroom/ac/ir_learned
+2026-02-23 14:05:35,312 [SmartRoom] INFO:    Subscribed: smartroom/dashboard/command
+2026-02-23 14:05:35,791 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 26, 'humidity': 71.8}
+2026-02-23 14:05:37,311 [SmartRoom] INFO: [2/5] Starting Data Collector...
+2026-02-23 14:05:37,315 [DataCollector] INFO: DataCollector started
+2026-02-23 14:05:37,316 [DataCollector] INFO: DataCollector connected (rc=0)
+2026-02-23 14:05:37,317 [SmartRoom] INFO:    ✅ Data Collector started
+2026-02-23 14:05:37,318 [SmartRoom] INFO: [3/5] Starting Person Detector...
+2026-02-23 14:05:37,319 [PersonDetector] ERROR: ultralytics or opencv not installed!
+2026-02-23 14:05:37,319 [SmartRoom] WARNING:    ⚠️  Camera failed
+2026-02-23 14:05:37,319 [SmartRoom] INFO: [4/5] Starting Optimization Loop...
+2026-02-23 14:05:37,322 [SmartRoom] INFO: Optimization loop started (interval=30s)
+2026-02-23 14:05:37,324 [SmartRoom] INFO:    ✅ Optimization loop started
+2026-02-23 14:05:37,327 [SmartRoom] INFO: [5/5] System Ready!
+2026-02-23 14:05:37,330 [SmartRoom] INFO: 🚀 All services started! Press Ctrl+C to stop.
+2026-02-23 14:05:37,330 [SmartRoom] INFO: 📊 Algorithm mode: BOTH
+2026-02-23 14:05:38,196 [SmartRoom] INFO: Shutting down...
+2026-02-23 14:05:39,198 [SmartRoom] INFO: MQTT disconnected cleanly
+2026-02-23 14:05:39,202 [SmartRoom] INFO: Goodbye!
+2026-02-23 14:12:51,076 [SmartRoom] INFO: Initializing Smart Room Controller...
+2026-02-23 14:12:51,077 [SmartRoom] INFO: Smart Room Controller initialized!
+2026-02-23 14:12:51,078 [SmartRoom] INFO: [1/5] Starting MQTT Client...
+2026-02-23 14:12:51,081 [SmartRoom] INFO:    ✅ MQTT client started
+2026-02-23 14:12:51,081 [SmartRoom] INFO: ✅ Connected to MQTT broker
+2026-02-23 14:12:51,081 [SmartRoom] INFO:    Subscribed: smartroom/ac/sensors
+2026-02-23 14:12:51,081 [SmartRoom] INFO:    Subscribed: smartroom/lamp/sensors
+2026-02-23 14:12:51,082 [SmartRoom] INFO:    Subscribed: smartroom/camera/detection
+2026-02-23 14:12:51,082 [SmartRoom] INFO:    Subscribed: smartroom/ac/status
+2026-02-23 14:12:51,082 [SmartRoom] INFO:    Subscribed: smartroom/lamp/status
+2026-02-23 14:12:51,082 [SmartRoom] INFO:    Subscribed: smartroom/ac/ir_learned
+2026-02-23 14:12:51,082 [SmartRoom] INFO:    Subscribed: smartroom/dashboard/command
+2026-02-23 14:12:53,081 [SmartRoom] INFO: [2/5] Starting Data Collector...
+2026-02-23 14:12:53,082 [DataCollector] INFO: DataCollector started
+2026-02-23 14:12:53,083 [DataCollector] INFO: DataCollector connected (rc=0)
+2026-02-23 14:12:53,083 [SmartRoom] INFO:    ✅ Data Collector started
+2026-02-23 14:12:53,083 [SmartRoom] INFO: [3/5] Starting Person Detector...
+2026-02-23 14:12:53,083 [PersonDetector] ERROR: ultralytics or opencv not installed!
+2026-02-23 14:12:53,084 [SmartRoom] WARNING:    ⚠️  Camera failed
+2026-02-23 14:12:53,084 [SmartRoom] INFO: [4/5] Starting Optimization Loop...
+2026-02-23 14:12:53,084 [SmartRoom] INFO: Optimization loop started (interval=30s)
+2026-02-23 14:12:53,084 [SmartRoom] INFO:    ✅ Optimization loop started
+2026-02-23 14:12:53,084 [SmartRoom] INFO: [5/5] System Ready!
+2026-02-23 14:12:53,085 [SmartRoom] INFO: 🚀 All services started! Press Ctrl+C to stop.
+2026-02-23 14:12:53,085 [SmartRoom] INFO: 📊 Algorithm mode: BOTH
+2026-02-23 14:12:55,849 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 70.4}
+2026-02-23 14:13:03,084 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:13:05,748 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 70.1}
+2026-02-23 14:13:15,758 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 69.9}
+2026-02-23 14:13:25,891 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 69.8}
+2026-02-23 14:13:33,085 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:13:35,821 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 69.7}
+2026-02-23 14:13:45,768 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 69.7}
+2026-02-23 14:13:53,109 [SmartRoom] INFO: STATUS | AC: 25.9°C 69.8% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:13:55,809 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 69.8}
+2026-02-23 14:14:03,086 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:14:05,858 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 69.7}
+2026-02-23 14:14:15,829 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 69.7}
+2026-02-23 14:14:25,902 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 69.7}
+2026-02-23 14:14:33,087 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:14:35,898 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 69.6}
+2026-02-23 14:14:53,144 [SmartRoom] INFO: STATUS | AC: 25.9°C 69.7% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:14:56,240 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 70.1}
+2026-02-23 14:14:56,241 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 70.1}
+2026-02-23 14:15:03,088 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:15:04,858 [SmartRoom] INFO: Shutting down...
+2026-02-23 14:15:05,751 [SmartRoom] INFO: MQTT disconnected cleanly
+2026-02-23 14:15:05,757 [SmartRoom] INFO: Goodbye!
+2026-02-23 14:18:30,652 [SmartRoom] INFO: Initializing Smart Room Controller...
+2026-02-23 14:18:30,653 [SmartRoom] INFO: Smart Room Controller initialized!
+2026-02-23 14:18:30,653 [SmartRoom] INFO: [1/5] Starting MQTT Client...
+2026-02-23 14:18:30,655 [SmartRoom] INFO:    ✅ MQTT client started
+2026-02-23 14:18:30,655 [SmartRoom] INFO: ✅ Connected to MQTT broker
+2026-02-23 14:18:30,656 [SmartRoom] INFO:    Subscribed: smartroom/ac/sensors
+2026-02-23 14:18:30,656 [SmartRoom] INFO:    Subscribed: smartroom/lamp/sensors
+2026-02-23 14:18:30,656 [SmartRoom] INFO:    Subscribed: smartroom/camera/detection
+2026-02-23 14:18:30,656 [SmartRoom] INFO:    Subscribed: smartroom/ac/status
+2026-02-23 14:18:30,656 [SmartRoom] INFO:    Subscribed: smartroom/lamp/status
+2026-02-23 14:18:30,656 [SmartRoom] INFO:    Subscribed: smartroom/ac/ir_learned
+2026-02-23 14:18:30,656 [SmartRoom] INFO:    Subscribed: smartroom/dashboard/command
+2026-02-23 14:18:32,656 [SmartRoom] INFO: [2/5] Starting Data Collector...
+2026-02-23 14:18:32,657 [DataCollector] INFO: DataCollector connected (rc=0)
+2026-02-23 14:18:32,657 [DataCollector] INFO: DataCollector started
+2026-02-23 14:18:32,657 [SmartRoom] INFO:    ✅ Data Collector started
+2026-02-23 14:18:32,657 [SmartRoom] INFO: [3/5] Starting Person Detector...
+2026-02-23 14:18:35,779 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 68.7}
+2026-02-23 14:18:38,194 [PersonDetector] INFO: Loading YOLO model: yolov8n.pt
+2026-02-23 14:18:39,051 [PersonDetector] INFO: YOLO model loaded!
+2026-02-23 14:18:39,051 [PersonDetector] INFO: Opening camera (index=0)...
+2026-02-23 14:18:39,245 [PersonDetector] INFO: Camera opened
+2026-02-23 14:18:39,246 [PersonDetector] INFO: Continuous detection started
+2026-02-23 14:18:39,246 [SmartRoom] INFO: [4/5] Starting Optimization Loop...
+2026-02-23 14:18:39,246 [SmartRoom] INFO: Optimization loop started (interval=30s)
+2026-02-23 14:18:39,246 [SmartRoom] INFO:    ✅ Optimization loop started
+2026-02-23 14:18:39,246 [SmartRoom] INFO: [5/5] System Ready!
+2026-02-23 14:18:39,246 [SmartRoom] INFO: 🚀 All services started! Press Ctrl+C to stop.
+2026-02-23 14:18:39,246 [SmartRoom] INFO: 📊 Algorithm mode: BOTH
+2026-02-23 14:18:39,837 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:18:45,182 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:18:45,862 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 68.7}
+2026-02-23 14:18:49,246 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:18:50,806 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:18:55,788 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 68.6}
+2026-02-23 14:18:56,272 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:19:01,747 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:19:05,790 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 68.6}
+2026-02-23 14:19:07,229 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:19:12,596 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:19:15,990 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 68.6}
+2026-02-23 14:19:18,090 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:19:19,246 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:19:23,476 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:19:25,763 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 68.7}
+2026-02-23 14:19:28,913 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:19:34,380 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:19:35,779 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 68.7}
+2026-02-23 14:19:39,252 [SmartRoom] INFO: STATUS | AC: 25.9°C 68.7% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:19:39,778 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:19:45,167 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:19:46,000 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 68.8}
+2026-02-23 14:19:49,247 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:19:50,561 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:19:55,790 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 68.8}
+2026-02-23 14:19:55,981 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:20:01,484 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:20:06,977 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:20:07,443 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 68.7}
+2026-02-23 14:20:12,344 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:20:15,870 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 68.8}
+2026-02-23 14:20:17,724 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:20:19,248 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:20:23,107 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:20:25,829 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 68.9}
+2026-02-23 14:20:28,465 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:20:33,829 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:20:35,771 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 68.8}
+2026-02-23 14:20:39,195 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:20:39,258 [SmartRoom] INFO: STATUS | AC: 25.8°C 68.8% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:20:44,563 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:20:45,879 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 68.7}
+2026-02-23 14:20:49,249 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:20:50,010 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:20:55,395 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:20:55,764 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 68.8}
+2026-02-23 14:21:00,754 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:21:05,764 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 68.8}
+2026-02-23 14:21:06,166 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:21:11,561 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:21:15,816 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 68.8}
+2026-02-23 14:21:16,922 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:21:19,249 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:21:22,290 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:21:25,787 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 68.7}
+2026-02-23 14:21:27,672 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:21:33,179 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:21:35,793 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 68.7}
+2026-02-23 14:21:38,546 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:21:39,264 [SmartRoom] INFO: STATUS | AC: 25.8°C 68.7% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:21:43,911 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:21:45,898 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 68.8}
+2026-02-23 14:21:49,249 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:21:49,286 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:21:54,653 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:21:55,761 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 69}
+2026-02-23 14:22:00,013 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:22:05,372 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:22:05,812 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 69.1}
+2026-02-23 14:22:10,756 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:22:15,877 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 69}
+2026-02-23 14:22:16,297 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:22:19,251 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:22:21,812 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:22:25,792 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 69}
+2026-02-23 14:22:27,216 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:22:32,584 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:22:35,766 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 69.2}
+2026-02-23 14:22:37,952 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:22:39,269 [SmartRoom] INFO: STATUS | AC: 25.9°C 69.2% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:22:43,303 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:22:45,807 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 69.4}
+2026-02-23 14:22:48,742 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:22:49,251 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:22:54,100 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:22:55,794 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 69.3}
+2026-02-23 14:22:59,469 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:23:04,828 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:23:05,761 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 69.3}
+2026-02-23 14:23:10,183 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:23:15,563 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:23:15,909 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.9, 'humidity': 69.4}
+2026-02-23 14:23:19,251 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:23:20,974 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:23:25,762 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 69.4}
+2026-02-23 14:23:26,554 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:23:32,042 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:23:35,775 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 69.5}
+2026-02-23 14:23:37,407 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:23:39,275 [SmartRoom] INFO: STATUS | AC: 25.8°C 69.5% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:23:42,766 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:23:45,916 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 69.6}
+2026-02-23 14:23:48,257 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:23:49,251 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:23:53,626 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:23:55,780 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 69.6}
+2026-02-23 14:23:58,988 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:24:04,357 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:24:05,763 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 69.7}
+2026-02-23 14:24:09,722 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:24:15,080 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:24:15,885 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 69.7}
+2026-02-23 14:24:19,252 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:24:20,437 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:24:25,809 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 69.7}
+2026-02-23 14:24:25,846 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:24:31,304 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:24:35,772 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 69.8}
+2026-02-23 14:24:36,819 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:24:39,282 [SmartRoom] INFO: STATUS | AC: 25.8°C 69.8% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:24:42,219 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:24:45,880 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 69.8}
+2026-02-23 14:24:47,699 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:24:49,252 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:24:53,052 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:24:55,781 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 69.9}
+2026-02-23 14:24:58,415 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:25:03,760 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:25:05,770 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 69.8}
+2026-02-23 14:25:09,119 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:25:14,469 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:25:15,908 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 69.9}
+2026-02-23 14:25:19,252 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:25:19,830 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:25:25,192 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:25:25,847 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 70.1}
+2026-02-23 14:25:30,565 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:25:35,814 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 70.2}
+2026-02-23 14:25:36,019 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:25:39,290 [SmartRoom] INFO: STATUS | AC: 25.8°C 70.2% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:25:41,541 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:25:45,890 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 70.2}
+2026-02-23 14:25:47,012 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:25:49,252 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:25:52,362 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:25:55,762 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 70.3}
+2026-02-23 14:25:57,755 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:26:03,110 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:26:05,787 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 70.3}
+2026-02-23 14:26:08,483 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:26:13,850 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:26:15,941 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 70.3}
+2026-02-23 14:26:19,214 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:26:19,253 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:26:24,592 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:26:25,791 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 70.4}
+2026-02-23 14:26:29,959 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:26:35,315 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:26:35,779 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 70.5}
+2026-02-23 14:26:39,295 [SmartRoom] INFO: STATUS | AC: 25.8°C 70.5% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:26:40,690 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:26:45,807 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 70.5}
+2026-02-23 14:26:46,200 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:26:49,253 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:26:51,691 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:26:55,810 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 70.5}
+2026-02-23 14:26:57,105 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:27:02,452 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:27:05,783 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 70.5}
+2026-02-23 14:27:07,809 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:27:13,167 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:27:15,901 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 70.6}
+2026-02-23 14:27:18,637 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:27:19,253 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:27:24,006 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:27:25,765 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 70.7}
+2026-02-23 14:27:29,383 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:27:34,735 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:27:35,797 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 70.7}
+2026-02-23 14:27:39,304 [SmartRoom] INFO: STATUS | AC: 25.8°C 70.7% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:27:40,090 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:27:45,458 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:27:45,897 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 70.7}
+2026-02-23 14:27:49,255 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:27:50,846 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:27:55,764 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 70.8}
+2026-02-23 14:27:56,354 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:28:01,840 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:28:05,768 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 70.8}
+2026-02-23 14:28:07,212 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:28:12,579 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:28:15,900 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 70.7}
+2026-02-23 14:28:18,088 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:28:19,255 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:28:23,484 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:28:25,769 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 70.8}
+2026-02-23 14:28:28,848 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:28:34,209 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:28:35,804 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 70.8}
+2026-02-23 14:28:39,309 [SmartRoom] INFO: STATUS | AC: 25.7°C 70.8% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:28:39,579 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:28:44,939 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:28:45,918 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 70.9}
+2026-02-23 14:28:49,255 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:28:50,302 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:28:55,675 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:28:57,255 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 70.8}
+2026-02-23 14:29:01,167 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:29:05,767 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 70.9}
+2026-02-23 14:29:06,679 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:29:12,110 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:29:15,903 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71}
+2026-02-23 14:29:17,531 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:29:19,255 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:29:22,889 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:29:25,776 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.1}
+2026-02-23 14:29:28,249 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:29:33,623 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:29:35,774 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71}
+2026-02-23 14:29:38,996 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:29:39,317 [SmartRoom] INFO: STATUS | AC: 25.7°C 71.0% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:29:44,365 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:29:45,897 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 71}
+2026-02-23 14:29:49,256 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:29:49,728 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:29:55,094 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:29:55,765 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71}
+2026-02-23 14:30:00,475 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:30:05,782 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.8, 'humidity': 71}
+2026-02-23 14:30:05,886 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:30:11,422 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:30:15,821 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.1}
+2026-02-23 14:30:16,881 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:30:19,257 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:30:22,231 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:30:25,764 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.1}
+2026-02-23 14:30:27,617 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:30:32,983 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:30:35,767 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.1}
+2026-02-23 14:30:38,344 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:30:39,326 [SmartRoom] INFO: STATUS | AC: 25.7°C 71.1% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:30:43,707 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:30:45,814 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.2}
+2026-02-23 14:30:49,054 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:30:49,257 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:30:54,414 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:30:55,761 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.2}
+2026-02-23 14:30:59,760 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:31:05,133 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:31:05,824 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.2}
+2026-02-23 14:31:10,509 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:31:15,843 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.2}
+2026-02-23 14:31:15,904 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:31:19,257 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:31:21,393 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:31:25,846 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.2}
+2026-02-23 14:31:26,869 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:31:32,232 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:31:35,779 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.3}
+2026-02-23 14:31:37,581 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:31:39,331 [SmartRoom] INFO: STATUS | AC: 25.7°C 71.3% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:31:42,941 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:31:45,896 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.4}
+2026-02-23 14:31:48,341 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:31:49,257 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:31:53,692 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:31:55,795 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.4}
+2026-02-23 14:31:59,054 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:32:04,424 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:32:05,833 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.4}
+2026-02-23 14:32:09,781 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:32:15,145 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:32:15,927 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.5}
+2026-02-23 14:32:19,258 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:32:20,502 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:32:25,779 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.5}
+2026-02-23 14:32:25,875 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:32:31,231 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:32:35,779 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.5}
+2026-02-23 14:32:36,579 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:32:39,336 [SmartRoom] INFO: STATUS | AC: 25.7°C 71.5% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:32:41,937 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:32:45,952 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.5}
+2026-02-23 14:32:47,286 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:32:49,258 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:32:52,645 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:32:55,774 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.5}
+2026-02-23 14:32:57,994 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:33:03,351 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:33:05,783 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.5}
+2026-02-23 14:33:08,704 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:33:14,059 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:33:16,027 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.5}
+2026-02-23 14:33:19,260 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:33:19,415 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:33:24,773 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:33:25,768 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.6}
+2026-02-23 14:33:30,122 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:33:35,479 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:33:35,873 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.6}
+2026-02-23 14:33:39,340 [SmartRoom] INFO: STATUS | AC: 25.7°C 71.6% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:33:40,832 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:33:46,177 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:33:47,361 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.7}
+2026-02-23 14:33:49,260 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:33:51,533 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:33:55,800 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.7}
+2026-02-23 14:33:56,902 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:34:02,258 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:34:05,786 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.7}
+2026-02-23 14:34:07,618 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:34:12,972 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:34:15,973 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.7}
+2026-02-23 14:34:18,334 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:34:19,261 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:34:23,664 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:34:25,785 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.7}
+2026-02-23 14:34:29,020 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:34:34,369 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:34:35,773 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.6}
+2026-02-23 14:34:39,347 [SmartRoom] INFO: STATUS | AC: 25.7°C 71.6% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:34:39,728 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:34:45,071 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:34:45,824 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.7}
+2026-02-23 14:34:49,261 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:34:50,431 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:34:55,781 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:34:55,782 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.7}
+2026-02-23 14:35:01,157 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:35:05,774 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.8}
+2026-02-23 14:35:06,514 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:35:11,865 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:35:15,856 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.7}
+2026-02-23 14:35:17,222 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:35:19,261 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:35:22,577 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:35:25,796 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.7}
+2026-02-23 14:35:27,935 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:35:33,288 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:35:35,772 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.7}
+2026-02-23 14:35:38,643 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:35:39,352 [SmartRoom] INFO: STATUS | AC: 25.7°C 71.7% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:35:43,993 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:35:45,819 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.6}
+2026-02-23 14:35:49,262 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:35:49,346 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:35:54,701 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:35:55,773 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.6}
+2026-02-23 14:36:00,057 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:36:05,404 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:36:05,776 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.5}
+2026-02-23 14:36:10,759 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:36:15,978 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.5}
+2026-02-23 14:36:16,138 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:36:19,263 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:36:21,502 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:36:25,795 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.5}
+2026-02-23 14:36:26,865 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:36:32,226 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:36:35,850 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.5}
+2026-02-23 14:36:37,581 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:36:39,357 [SmartRoom] INFO: STATUS | AC: 25.7°C 71.5% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:36:42,929 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:36:45,833 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.4}
+2026-02-23 14:36:48,297 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:36:49,263 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:36:53,650 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:36:55,778 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.3}
+2026-02-23 14:36:59,012 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:37:04,375 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:37:05,775 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.2}
+2026-02-23 14:37:09,729 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:37:15,083 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:37:15,854 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.2}
+2026-02-23 14:37:19,264 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:37:20,434 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:37:25,783 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.2}
+2026-02-23 14:37:25,799 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:37:31,166 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:37:35,776 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.2}
+2026-02-23 14:37:36,528 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:37:39,362 [SmartRoom] INFO: STATUS | AC: 25.7°C 71.2% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:37:41,870 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:37:46,015 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71.1}
+2026-02-23 14:37:47,220 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:37:49,264 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:37:52,568 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:37:57,773 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 71}
+2026-02-23 14:37:57,924 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:38:03,302 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:38:05,838 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 70.9}
+2026-02-23 14:38:08,663 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:38:14,030 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:38:15,955 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 70.9}
+2026-02-23 14:38:19,264 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:38:19,387 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:38:24,742 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:38:25,791 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 70.9}
+2026-02-23 14:38:30,099 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:38:35,454 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:38:35,778 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 70.9}
+2026-02-23 14:38:39,368 [SmartRoom] INFO: STATUS | AC: 25.7°C 70.9% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:38:40,822 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:38:45,856 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 70.7}
+2026-02-23 14:38:46,190 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:38:49,267 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:38:51,554 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:38:55,780 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 70.6}
+2026-02-23 14:38:56,919 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:39:02,277 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:39:05,779 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.7, 'humidity': 70.6}
+2026-02-23 14:39:07,640 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:39:12,993 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:39:15,857 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 70.5}
+2026-02-23 14:39:18,349 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:39:19,267 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:39:23,682 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:39:25,782 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 70.5}
+2026-02-23 14:39:29,027 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:39:34,384 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:39:35,781 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 70.4}
+2026-02-23 14:39:39,375 [SmartRoom] INFO: STATUS | AC: 25.6°C 70.4% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:39:39,754 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:39:45,112 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:39:45,841 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 70.4}
+2026-02-23 14:39:49,267 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:39:50,467 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:39:55,783 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 70.3}
+2026-02-23 14:39:55,835 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:40:01,187 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:40:05,779 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 70.3}
+2026-02-23 14:40:06,547 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:40:11,912 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:40:16,084 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 70.3}
+2026-02-23 14:40:17,259 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:40:19,268 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:40:22,618 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:40:25,797 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 70.2}
+2026-02-23 14:40:27,961 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:40:33,321 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:40:35,785 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 70.1}
+2026-02-23 14:40:38,667 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:40:39,381 [SmartRoom] INFO: STATUS | AC: 25.6°C 70.1% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:40:44,026 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:40:45,832 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 70}
+2026-02-23 14:40:49,269 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:40:49,371 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:40:54,725 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:40:55,795 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 70}
+2026-02-23 14:41:00,069 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:41:05,427 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:41:05,787 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.9}
+2026-02-23 14:41:10,780 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:41:15,828 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.8}
+2026-02-23 14:41:16,165 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:41:19,269 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:41:21,523 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:41:25,787 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.8}
+2026-02-23 14:41:26,872 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:41:32,231 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:41:35,796 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.8}
+2026-02-23 14:41:37,579 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:41:39,385 [SmartRoom] INFO: STATUS | AC: 25.6°C 69.8% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:41:42,934 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:41:45,875 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.7}
+2026-02-23 14:41:48,289 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:41:49,269 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:41:53,644 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:41:55,797 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.7}
+2026-02-23 14:41:58,993 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:42:04,353 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:42:05,800 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.7}
+2026-02-23 14:42:09,701 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:42:15,055 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:42:15,832 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.7}
+2026-02-23 14:42:19,269 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:42:20,420 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:42:25,782 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:42:25,798 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.6}
+2026-02-23 14:42:31,143 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:42:35,797 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.5}
+2026-02-23 14:42:36,503 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:42:39,389 [SmartRoom] INFO: STATUS | AC: 25.6°C 69.5% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:42:41,874 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:42:45,899 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.5}
+2026-02-23 14:42:47,218 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:42:49,270 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:42:52,583 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:42:55,819 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.4}
+2026-02-23 14:42:57,935 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:43:03,298 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:43:05,836 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.3}
+2026-02-23 14:43:08,657 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:43:14,020 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:43:15,883 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.3}
+2026-02-23 14:43:19,270 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:43:19,390 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:43:24,752 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:43:25,798 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.3}
+2026-02-23 14:43:30,112 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:43:35,467 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:43:38,322 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.3}
+2026-02-23 14:43:39,395 [SmartRoom] INFO: STATUS | AC: 25.6°C 69.3% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:43:40,845 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:43:45,788 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.3}
+2026-02-23 14:43:46,202 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:43:49,270 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:43:51,557 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:43:55,788 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.2}
+2026-02-23 14:43:56,911 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:44:02,269 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:44:05,958 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.2}
+2026-02-23 14:44:07,627 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:44:12,977 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:44:15,794 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.2}
+2026-02-23 14:44:18,333 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:44:19,272 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:44:23,665 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:44:25,788 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.1}
+2026-02-23 14:44:29,025 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:44:34,376 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:44:35,959 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69.1}
+2026-02-23 14:44:39,400 [SmartRoom] INFO: STATUS | AC: 25.6°C 69.1% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:44:39,731 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:44:45,080 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:44:45,995 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69}
+2026-02-23 14:44:49,272 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:44:50,456 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:44:55,791 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 68.9}
+2026-02-23 14:44:55,829 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:45:01,197 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:45:05,959 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.9}
+2026-02-23 14:45:06,551 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:45:11,902 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:45:15,792 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.9}
+2026-02-23 14:45:17,260 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:45:19,272 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:45:22,621 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:45:25,795 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.6, 'humidity': 69}
+2026-02-23 14:45:27,975 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:45:33,357 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:45:35,860 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.9}
+2026-02-23 14:45:38,712 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:45:39,406 [SmartRoom] INFO: STATUS | AC: 25.5°C 68.9% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:45:44,072 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:45:45,798 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.9}
+2026-02-23 14:45:49,272 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:45:49,422 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:45:54,777 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:45:55,793 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.9}
+2026-02-23 14:46:00,150 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:46:05,520 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:46:05,841 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.8}
+2026-02-23 14:46:10,881 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:46:15,825 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.8}
+2026-02-23 14:46:16,243 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:46:19,273 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:46:21,606 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:46:25,791 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.8}
+2026-02-23 14:46:26,967 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:46:32,334 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:46:35,840 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.8}
+2026-02-23 14:46:37,689 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:46:39,410 [SmartRoom] INFO: STATUS | AC: 25.5°C 68.8% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:46:43,056 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:46:45,802 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.8}
+2026-02-23 14:46:48,431 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:46:49,273 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:46:53,791 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:46:59,154 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:47:02,307 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.8}
+2026-02-23 14:47:04,498 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:47:05,843 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.7}
+2026-02-23 14:47:09,859 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:47:15,214 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:47:15,809 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.7}
+2026-02-23 14:47:19,273 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:47:20,581 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:47:25,954 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.7}
+2026-02-23 14:47:25,956 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:47:31,300 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:47:35,982 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.7}
+2026-02-23 14:47:36,654 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:47:39,415 [SmartRoom] INFO: STATUS | AC: 25.5°C 68.7% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:47:42,017 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:47:46,023 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.6}
+2026-02-23 14:47:47,372 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:47:49,273 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:47:52,718 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:47:55,838 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.5}
+2026-02-23 14:47:58,072 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:48:03,456 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:48:05,894 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.5}
+2026-02-23 14:48:08,814 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:48:14,178 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:48:15,865 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.4}
+2026-02-23 14:48:19,274 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:48:19,531 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:48:24,895 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:48:25,849 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.4}
+2026-02-23 14:48:30,244 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:48:35,612 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:48:35,936 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.4}
+2026-02-23 14:48:39,420 [SmartRoom] INFO: STATUS | AC: 25.5°C 68.4% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:48:40,972 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:48:45,796 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.4}
+2026-02-23 14:48:46,305 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:48:49,274 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:48:51,659 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:48:55,799 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.4}
+2026-02-23 14:48:57,014 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:49:02,360 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:49:06,040 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.3}
+2026-02-23 14:49:07,717 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:49:13,078 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:49:15,819 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.3}
+2026-02-23 14:49:18,442 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:49:19,275 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:49:23,795 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:49:25,843 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.4}
+2026-02-23 14:49:29,159 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:49:34,510 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:49:35,889 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.3}
+2026-02-23 14:49:39,427 [SmartRoom] INFO: STATUS | AC: 25.5°C 68.3% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:49:39,873 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:49:45,239 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:49:45,870 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.3}
+2026-02-23 14:49:49,275 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:49:50,602 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:49:55,830 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.3}
+2026-02-23 14:49:55,991 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:50:01,348 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:50:06,002 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.2}
+2026-02-23 14:50:06,705 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:50:12,070 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:50:15,800 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68}
+2026-02-23 14:50:17,425 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:50:19,275 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:50:22,788 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:50:25,811 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68}
+2026-02-23 14:50:28,140 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:50:33,503 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:50:35,870 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68}
+2026-02-23 14:50:38,868 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:50:39,431 [SmartRoom] INFO: STATUS | AC: 25.5°C 68.0% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:50:44,228 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:50:45,862 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.1}
+2026-02-23 14:50:49,276 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:50:49,601 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:50:54,954 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:50:55,821 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.1}
+2026-02-23 14:51:00,316 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:51:05,688 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:51:05,855 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68.1}
+2026-02-23 14:51:11,098 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:51:15,823 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68}
+2026-02-23 14:51:16,455 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:51:19,277 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:51:21,814 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:51:25,804 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68}
+2026-02-23 14:51:27,169 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:51:32,534 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:51:35,911 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68}
+2026-02-23 14:51:37,888 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:51:39,436 [SmartRoom] INFO: STATUS | AC: 25.5°C 68.0% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:51:43,277 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:51:45,804 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68}
+2026-02-23 14:51:48,640 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:51:49,278 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:51:53,993 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:51:55,863 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 68}
+2026-02-23 14:51:59,356 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:52:04,725 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:52:05,904 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 67.9}
+2026-02-23 14:52:10,087 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:52:15,447 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:52:15,805 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 67.8}
+2026-02-23 14:52:19,278 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:52:20,804 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:52:25,813 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 67.8}
+2026-02-23 14:52:26,188 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:52:31,551 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:52:35,870 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 67.8}
+2026-02-23 14:52:36,908 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:52:39,441 [SmartRoom] INFO: STATUS | AC: 25.5°C 67.8% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:52:42,273 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:52:45,939 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 67.7}
+2026-02-23 14:52:47,631 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:52:49,278 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:52:52,996 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:52:55,824 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 67.7}
+2026-02-23 14:52:58,351 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:53:03,716 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:53:05,915 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 67.7}
+2026-02-23 14:53:09,082 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:53:14,437 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:53:15,810 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 67.7}
+2026-02-23 14:53:19,279 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:53:19,802 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:53:25,153 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:53:25,811 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.5, 'humidity': 67.6}
+2026-02-23 14:53:30,515 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:53:35,893 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:53:35,913 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.7}
+2026-02-23 14:53:39,445 [SmartRoom] INFO: STATUS | AC: 25.4°C 67.7% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:53:41,234 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:53:45,884 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.7}
+2026-02-23 14:53:46,591 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:53:49,279 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:53:51,942 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:53:55,819 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.7}
+2026-02-23 14:53:57,296 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:54:02,649 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:54:06,047 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.6}
+2026-02-23 14:54:08,006 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:54:13,364 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:54:15,865 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.5}
+2026-02-23 14:54:18,727 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:54:19,279 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:54:24,072 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:54:25,999 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.5}
+2026-02-23 14:54:29,430 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:54:34,777 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:54:36,027 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.5}
+2026-02-23 14:54:39,451 [SmartRoom] INFO: STATUS | AC: 25.4°C 67.5% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:54:40,134 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:54:45,482 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:54:45,892 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.5}
+2026-02-23 14:54:49,279 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:54:50,841 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:54:55,848 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.5}
+2026-02-23 14:54:56,215 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:55:01,575 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:55:06,921 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:55:09,990 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.5}
+2026-02-23 14:55:12,283 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:55:15,962 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.5}
+2026-02-23 14:55:17,662 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:55:19,280 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:55:23,016 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:55:25,822 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.5}
+2026-02-23 14:55:28,379 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:55:33,721 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:55:36,033 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.6}
+2026-02-23 14:55:39,078 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:55:39,456 [SmartRoom] INFO: STATUS | AC: 25.4°C 67.6% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:55:44,434 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:55:45,821 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.5}
+2026-02-23 14:55:49,280 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:55:49,788 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:55:55,135 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:55:55,844 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.5}
+2026-02-23 14:56:00,490 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:56:05,846 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:56:11,203 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:56:16,555 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:56:19,280 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:56:21,912 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:56:25,826 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.5}
+2026-02-23 14:56:27,262 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:56:32,615 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:56:35,952 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.5}
+2026-02-23 14:56:37,963 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:56:39,461 [SmartRoom] INFO: STATUS | AC: 25.4°C 67.5% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:56:43,315 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:56:46,086 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.5}
+2026-02-23 14:56:48,673 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:56:49,281 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:56:54,031 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:56:55,843 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.5}
+2026-02-23 14:56:59,380 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:57:04,733 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:57:06,060 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.3}
+2026-02-23 14:57:10,081 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:57:15,439 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:57:15,852 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.4}
+2026-02-23 14:57:19,282 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:57:20,793 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:57:25,887 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.4}
+2026-02-23 14:57:26,172 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:57:31,514 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:57:35,947 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.4}
+2026-02-23 14:57:36,871 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:57:39,466 [SmartRoom] INFO: STATUS | AC: 25.4°C 67.4% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:57:42,225 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:57:45,852 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.5}
+2026-02-23 14:57:47,582 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:57:49,282 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:57:52,930 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:57:55,850 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.4}
+2026-02-23 14:57:58,286 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:58:03,632 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:58:05,960 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.4}
+2026-02-23 14:58:08,992 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:58:14,342 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:58:15,863 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.4}
+2026-02-23 14:58:19,282 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:58:19,699 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:58:25,047 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:58:28,220 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.4}
+2026-02-23 14:58:30,404 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:58:35,758 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:58:35,965 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.4}
+2026-02-23 14:58:39,470 [SmartRoom] INFO: STATUS | AC: 25.4°C 67.4% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:58:41,146 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:58:46,510 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:58:49,283 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:58:51,844 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.3}
+2026-02-23 14:58:51,905 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:58:56,064 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.3}
+2026-02-23 14:58:57,259 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:59:02,658 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:59:05,838 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.4}
+2026-02-23 14:59:08,020 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:59:13,382 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:59:17,867 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.4}
+2026-02-23 14:59:18,750 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:59:19,283 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:59:24,114 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:59:26,087 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.4}
+2026-02-23 14:59:29,486 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:59:34,984 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:59:37,891 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.5}
+2026-02-23 14:59:39,477 [SmartRoom] INFO: STATUS | AC: 25.4°C 67.5% | Lamp: 0lux 0% | Cam: 0ppl | Opts: 0 | GA:0 PSO:0 TIE:0
+2026-02-23 14:59:40,374 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:59:45,780 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:59:45,838 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.5}
+2026-02-23 14:59:49,283 [SmartRoom] WARNING: ⚠️  Sensor data too old, skipping optimization
+2026-02-23 14:59:51,154 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 14:59:56,544 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 15:00:00,053 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.6}
+2026-02-23 15:00:01,912 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection
+2026-02-23 15:00:05,854 [SmartRoom] INFO: [AC Status] {'ac_state': 'OFF', 'ac_temp': 24, 'fan_speed': 1, 'temperature': 25.4, 'humidity': 67.9}
+2026-02-23 15:00:07,291 [MQTTHandler] WARNING: Not connected! Cannot publish to smartroom/camera/detection

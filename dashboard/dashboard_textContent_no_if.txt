@@ -1,0 +1,84 @@
+﻿
+LineNumber Line                                                                                                        
+---------- ----                                                                                                        
+        28                 lEl.textContent = role === 'admin' ? 'ADMIN' : 'USER';                                      
+       933                         overlay.textContent = 'Waiting for MySQL data (polling every 5 seconds)...';        
+      1221                         document.getElementById('compare-avg-before').textContent = summary.avg_before ||...
+      1222                         document.getElementById('compare-avg-after').textContent = summary.avg_after || '...
+      1224                         savingsEl.textContent = summary.savings_percent || '--';                            
+      1298                     btnEl.textContent = 'STOP RECORDING';                                                   
+      1305                     btnEl.textContent = 'RESET & RE-RECORD';                                                
+      1309                     btnEl.textContent = 'START RECORDING';                                                  
+      1356                             el.textContent = summary.savings_percent || '--';                               
+      1398                     label.textContent = 'Light Mode';                                                       
+      1401                     label.textContent = 'Dark Mode';                                                        
+      1568                 badge.textContent = state;                                                                  
+      1890                 text.textContent = 'Connected';                                                             
+      1893                 document.getElementById('sbms-user-email').textContent = userEmail || '-';                  
+      1894                 document.getElementById('sbms-server-display').textContent = serverUrl || '-';              
+      1898                 text.textContent = 'Disconnected';                                                          
+      1952                             tempEl.textContent = Number.isFinite(t) ? t.toFixed(1) : '--';                  
+      1956                             humEl.textContent = Number.isFinite(h) ? h.toFixed(1) : '--';                   
+      1960                             luxEl.textContent = (typeof luxRaw === 'number') ? luxRaw.toFixed(1) : '--';    
+      2505                         error.querySelector('h3').textContent = 'Camera OFF';                               
+      2506                         error.querySelector('p').textContent = 'Camera is off. Click Camera ON button to ...
+      2520                 text.textContent = 'Camera ON';                                                             
+      2523                 text.textContent = 'Camera OFF';                                                            
+      2555                         statusEl.textContent = 'Active';                                                    
+      2557                         document.getElementById('cam-resolution').textContent = data.width + ' x ' + data...
+      2558                         document.getElementById('cam-fps').textContent = data.fps + ' FPS';                 
+      2560                         statusEl.textContent = 'Inactive';                                                  
+      2565                     document.getElementById('cam-status').textContent = 'Error';                            
+      2578             document.getElementById('ac-temp-display').textContent = value;                                 
+      2583             document.getElementById('ac-rh-display').textContent = value;                                   
+      2588             document.getElementById('fan-speed-display').textContent = value;                               
+      2719             document.getElementById('brightness-display-' + lampNum).textContent = value;                   
+      2726             document.getElementById('brightness-display-2').textContent = val;                              
+      2933                 statusElement.textContent = 'Ready! Press remote...';                                       
+      2968                                     statusElement.textContent = 'Learned OK';                               
+      2981                                     statusElement.textContent = 'Timeout';                                  
+      2994                     statusElement.textContent = 'Error';                                                    
+      3078                         summaryEl.textContent = codeCount;                                                  
+      3088                             statusElement.textContent = 'Learned [OK]';                                     
+      3118                     statusElement.textContent = 'Not learned';                                              
+      3133                 summaryEl.textContent = '0';                                                                
+      3345             document.getElementById('alert-person-count').textContent = count;                              
+      3346             document.getElementById('alert-person-confidence').textContent = confidence + '%';              
+      3347             document.getElementById('alert-time').textContent = new Date().toLocaleTimeString();            
+      3401             text.textContent = power.toFixed(3) + ' kW | ' + voltage.toFixed(1) + ' V | ' + current.toFix...
+      3551                         uptEl.textContent = h > 0 ? h + 'h ' + m + 'm' : m + 'm ' + (secs % 60) + 's';      
+      3564                         acStateEl.textContent = acState;                                                    
+      3584                         fanLabel.textContent = fanNames[fanSpeed] || 'Level ' + fanSpeed;                   
+      3601                         modeIconEl.textContent = modeInfo.text;                                             
+      3612                             ctrlIcon.textContent = 'A';                                                     
+      3614                             ctrlText.textContent = 'ADAPTIVE';                                              
+      3617                             ctrlIcon.textContent = 'M';                                                     
+      3619                             ctrlText.textContent = 'MANUAL';                                                
+      3628                             srcBadge.textContent = 'AI Controlled';                                         
+      3633                             srcBadge.textContent = 'Manual Control';                                        
+      3657                         liveState.textContent = acState;                                                    
+      3686                         camPersonEl.textContent = personDetected ? 'Yes' : 'No';                            
+      3692                         camCountEl.textContent = personCount;                                               
+      3698                         camConfEl.textContent = confidence + '%';                                           
+      3736                         gaEl.textContent = gaFitness.toFixed(2);                                            
+      3740                         psoEl.textContent = psoFitness.toFixed(2);                                          
+      3747                         psoBrightEl.textContent = Math.round(num(system.pso_brightness));                   
+      3753                         optRunsEl.textContent = num(system.optimization_runs);                              
+      3798                             txt.textContent = 'Connected' + (data.message_count > 0 ? ' (' + data.message...
+      3801                             txt.textContent = data.error ? data.error.substring(0, 30) : 'Disconnected';    
+      4995                     gaEl.textContent = gaFitness.toFixed(2);                                                
+      5009                     psoEl.textContent = psoFitness.toFixed(2);                                              
+      5056                     countEl.textContent = personCount;                                                      
+      5066                     countDisplayEl.textContent = personCount;                                               
+      5084                         el.textContent = confText;                                                          
+      5107                     personEl.textContent = personDetected ? 'Yes' : 'No';                                   
+      5143                         lastSeenEl.textContent = 'Sekarang';                                                
+      5149                         lastSeenEl.textContent = mins > 0 ? (mins + 'm ' + secs + 's lalu') : (secs + 's ...
+      5153                         lastSeenEl.textContent = '--';                                                      
+      5166                         autoOffEl.textContent = 'OFF';                                                      
+      5172                         autoOffEl.textContent = offMins + 'm ' + offSecs + 's';                             
+      5176                         autoOffEl.textContent = '--';                                                       
+      5267                     statusElement.textContent = 'Failed';                                                   
+      5280                 statusElement.textContent = 'Learned [OK]';                                                 
+
+
