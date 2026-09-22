@@ -6125,7 +6125,7 @@ function selectASHRAE(metric, value) {
     });
     var label = (_ashraeScaleLabels[metric] && _ashraeScaleLabels[metric][String(value)]) ? _ashraeScaleLabels[metric][String(value)] : '';
     var el = document.getElementById(selectedId);
-    if (el) el.textContent = 'Dipilih: ' + (value >= 0 ? '+' : '') + value + ' (' + label + ')';
+    if (el) el.textContent = 'Selected: ' + (value >= 0 ? '+' : '') + value + ' (' + label + ')';
 }
 
 // Legacy compat
@@ -6281,7 +6281,7 @@ function selectASHRAEVisual(metric, value) {
     });
     var label = (_ashraeVisualLabels[metric] && _ashraeVisualLabels[metric][String(value)]) ? _ashraeVisualLabels[metric][String(value)] : '';
     var el = document.getElementById(selectedId);
-    if (el) el.textContent = 'Dipilih: ' + (value >= 0 ? '+' : '') + value + ' (' + label + ')';
+    if (el) el.textContent = 'Selected: ' + (value >= 0 ? '+' : '') + value + ' (' + label + ')';
 }
 
 // Legacy compat
