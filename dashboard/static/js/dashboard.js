@@ -6138,7 +6138,7 @@ function resetThermalForm() {
     ['tsv', 'tpv', 'tsatisfaction'].forEach(function(m) {
         document.querySelectorAll('#' + m + '-scale .ashrae-btn').forEach(function(btn) { btn.classList.remove('active'); });
         var el = document.getElementById(m + '-selected');
-        if (el) el.textContent = '— Belum dipilih —';
+        if (el) el.textContent = '— Not selected —';
     });
     var c = document.getElementById('thermal-feedback-comment');
     if (c) c.value = '';
@@ -6146,7 +6146,7 @@ function resetThermalForm() {
 
 function submitThermalFeedback() {
     if (_ashraeThermal.tsv === null || _ashraeThermal.tpv === null || _ashraeThermal.tsatisfaction === null) {
-        showToast('Harap isi semua pertanyaan (Q1, Q2, Q3)', 'error');
+        showToast('Please answer all questions (Q1, Q2, Q3)', 'error');
         return;
     }
     var comment = (document.getElementById('thermal-feedback-comment') ? document.getElementById('thermal-feedback-comment').value : '').trim();
@@ -6294,7 +6294,7 @@ function resetVisualForm() {
     ['lsv', 'lpv', 'vsav'].forEach(function(m) {
         document.querySelectorAll('#' + m + '-scale .ashrae-btn').forEach(function(btn) { btn.classList.remove('active'); });
         var el = document.getElementById(m + '-selected');
-        if (el) el.textContent = '— Belum dipilih —';
+        if (el) el.textContent = '— Not selected —';
     });
     var c = document.getElementById('visual-feedback-comment');
     if (c) c.value = '';
@@ -6302,7 +6302,7 @@ function resetVisualForm() {
 
 function submitVisualFeedback() {
     if (_ashraeVisual.lsv === null || _ashraeVisual.lpv === null || _ashraeVisual.vsav === null) {
-        showToast('Harap isi semua pertanyaan (Q1, Q2, Q3)', 'error');
+        showToast('Please answer all questions (Q1, Q2, Q3)', 'error');
         return;
     }
     var comment = (document.getElementById('visual-feedback-comment') ? document.getElementById('visual-feedback-comment').value : '').trim();

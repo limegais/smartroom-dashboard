@@ -1,7 +1,7 @@
 <div id="thermal-comfort" class="page">
     <div class="header">
         <h1>Thermal Comfort Feedback</h1>
-        <p>Occupant Thermal Comfort Feedback — Standar Acuan: <strong>ASHRAE Standard 55-2020</strong></p>
+        <p>Occupant Thermal Comfort Feedback</p>
     </div>
 
     <!-- Current Conditions -->
@@ -31,11 +31,7 @@
                 <div class="chart-title"><i class="fas fa-thermometer-half" style="color: var(--primary); margin-right: 8px;"></i>Thermal Comfort Rating Form</div>
             </div>
 
-            <!-- Standard reference note -->
-            <div style="background: rgba(99,102,241,0.08); border-left: 3px solid var(--primary); padding: 10px 14px; border-radius: 6px; margin-bottom: 18px; font-size: 13px; color: var(--text-secondary);">
-                <i class="fas fa-info-circle" style="margin-right: 6px; color: var(--primary);"></i>
-                Standar Acuan: <strong>ASHRAE Standard 55-2020</strong>
-            </div>
+
 
             <!-- Q1: Thermal Sensation Vote (TSV) -->
             <div class="ashrae-question-block">
@@ -55,7 +51,7 @@
                     <button class="ashrae-btn warm" data-value="2" onclick="selectASHRAE('tsv',2)">+2<span>Warm</span></button>
                     <button class="ashrae-btn warm" data-value="3" onclick="selectASHRAE('tsv',3)">+3<span>Hot</span></button>
                 </div>
-                <div class="ashrae-selected-label" id="tsv-selected">— Belum dipilih —</div>
+                <div class="ashrae-selected-label" id="tsv-selected">— Not selected —</div>
             </div>
 
             <!-- Q2: Thermal Preference Vote (TPV) -->
@@ -72,7 +68,7 @@
                     <button class="ashrae-btn neutral" data-value="0" onclick="selectASHRAE('tpv',0)">0<span>No Change</span></button>
                     <button class="ashrae-btn warm" data-value="1" onclick="selectASHRAE('tpv',1)">+1<span>Warmer</span></button>
                 </div>
-                <div class="ashrae-selected-label" id="tpv-selected">— Belum dipilih —</div>
+                <div class="ashrae-selected-label" id="tpv-selected">— Not selected —</div>
             </div>
 
             <!-- Q3: Thermal Satisfaction -->
@@ -93,7 +89,7 @@
                     <button class="ashrae-btn satisfied" data-value="2" onclick="selectASHRAE('tsatisfaction',2)">+2<span>Satisfied</span></button>
                     <button class="ashrae-btn satisfied" data-value="3" onclick="selectASHRAE('tsatisfaction',3)">+3<span>Very Satisfied</span></button>
                 </div>
-                <div class="ashrae-selected-label" id="tsatisfaction-selected">— Belum dipilih —</div>
+                <div class="ashrae-selected-label" id="tsatisfaction-selected">— Not selected —</div>
             </div>
 
             <!-- Comment -->

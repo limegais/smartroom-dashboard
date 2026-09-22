@@ -35,11 +35,7 @@
                 <div class="chart-title"><i class="fas fa-lightbulb" style="color: #0ea5e9; margin-right: 8px;"></i>Visual Comfort Rating Form</div>
             </div>
 
-            <!-- Standard reference note -->
-            <div style="background: rgba(14,165,233,0.08); border-left: 3px solid #0ea5e9; padding: 10px 14px; border-radius: 6px; margin-bottom: 18px; font-size: 13px; color: var(--text-secondary);">
-                <i class="fas fa-info-circle" style="margin-right: 6px; color: #0ea5e9;"></i>
-                Standar Acuan: <strong>Visual Comfort Assessment Protocol</strong>
-            </div>
+
 
             <!-- Q1: Lighting Sensation Vote (LSV) -->
             <div class="ashrae-question-block">
@@ -59,7 +55,7 @@
                     <button class="ashrae-btn bright-side" data-value="2" onclick="selectASHRAEVisual('lsv',2)">+2<span>Bright</span></button>
                     <button class="ashrae-btn bright-side" data-value="3" onclick="selectASHRAEVisual('lsv',3)">+3<span>Very bright</span></button>
                 </div>
-                <div class="ashrae-selected-label" id="lsv-selected">— Belum dipilih —</div>
+                <div class="ashrae-selected-label" id="lsv-selected">— Not selected —</div>
             </div>
 
             <!-- Q2: Lighting Preference Vote (LPV) -->
@@ -76,7 +72,7 @@
                     <button class="ashrae-btn neutral" data-value="0" onclick="selectASHRAEVisual('lpv',0)">0<span>No change</span></button>
                     <button class="ashrae-btn bright-side" data-value="1" onclick="selectASHRAEVisual('lpv',1)">+1<span>Brighter</span></button>
                 </div>
-                <div class="ashrae-selected-label" id="lpv-selected">— Belum dipilih —</div>
+                <div class="ashrae-selected-label" id="lpv-selected">— Not selected —</div>
             </div>
 
             <!-- Q3: Visual Satisfaction Vote (VSaV) -->
@@ -97,7 +93,7 @@
                     <button class="ashrae-btn satisfied" data-value="2" onclick="selectASHRAEVisual('vsav',2)">+2<span>Satisfied</span></button>
                     <button class="ashrae-btn satisfied" data-value="3" onclick="selectASHRAEVisual('vsav',3)">+3<span>Very satisfied</span></button>
                 </div>
-                <div class="ashrae-selected-label" id="vsav-selected">— Belum dipilih —</div>
+                <div class="ashrae-selected-label" id="vsav-selected">— Not selected —</div>
             </div>
 
             <!-- Comment -->
