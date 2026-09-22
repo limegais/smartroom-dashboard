@@ -4234,8 +4234,9 @@ def occupancy_feedback_submit():
         })
 
         # Save to InfluxDB
-        if influx_client and write_api:
-            try:
+        try:
+            _, write_api, _ = _get_influx_client()
+            if write_api:
                 pt = Point('comfort_feedback')
                 pt = pt.field('thermal_rating', thermal_rating)
                 pt = pt.field('visual_rating', visual_rating)
@@ -4252,8 +4253,8 @@ def occupancy_feedback_submit():
                 if vsav is not None: pt = pt.field('vsav', vsav)
                 pt = pt.time(datetime.utcnow(), WritePrecision.NS)
                 write_api.write(bucket=INFLUX_BUCKET, org=INFLUX_ORG, record=pt)
-            except Exception as e:
-                print(f"[ERROR] Failed to save feedback to InfluxDB: {e}")
+        except Exception as e:
+            print(f"[ERROR] Failed to save feedback to InfluxDB: {e}")
 
         return jsonify({'status': 'success', 'message': 'Feedback saved', 'google_form_url': google_form_url})
     except Exception as e:
